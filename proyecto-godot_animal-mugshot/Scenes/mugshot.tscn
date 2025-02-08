@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
-[ext_resource type="Texture2D" uid="uid://bmt6fjti0hrwd" path="res://Assets/test_assets/bg.png" id="2_ft5gd"]
 [ext_resource type="Texture2D" uid="uid://dklqyher7s1ds" path="res://Assets/test_assets/character.png" id="3_2pqv5"]
 [ext_resource type="Texture2D" uid="uid://b5qolrc8xesk5" path="res://Assets/test_assets/prop2.png" id="4_1j25o"]
 [ext_resource type="Texture2D" uid="uid://py7nm3i2vuc7" path="res://Assets/test_assets/prop1.png" id="5_5bg7t"]
+[ext_resource type="Texture2D" uid="uid://di2u5556fhmrk" path="res://Assets/test_assets/character_xray.png" id="5_r5ber"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfuuw"]
 radius = 37.0
@@ -13,35 +13,51 @@ height = 132.0
 [node name="mugshot" type="Node2D"]
 script = ExtResource("1_x6js4")
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_ft5gd")
-
-[node name="Body_Positions" type="Node2D" parent="."]
+[node name="Body_Front" type="Node2D" parent="."]
 z_index = 1
 
-[node name="Head_Prop" type="Node2D" parent="Body_Positions"]
+[node name="Head_Prop" type="Node2D" parent="Body_Front"]
 z_index = 2
 
-[node name="Prop2" type="Sprite2D" parent="Body_Positions/Head_Prop"]
+[node name="Prop2" type="Sprite2D" parent="Body_Front/Head_Prop"]
 visible = false
 position = Vector2(-2, -92)
 texture = ExtResource("4_1j25o")
 
-[node name="Prop1" type="Sprite2D" parent="Body_Positions/Head_Prop"]
+[node name="Prop1" type="Sprite2D" parent="Body_Front/Head_Prop"]
 visible = false
 position = Vector2(6, -69)
 texture = ExtResource("5_5bg7t")
 
-[node name="Character_Body" type="Node2D" parent="Body_Positions"]
+[node name="Character_Body" type="Node2D" parent="Body_Front"]
 
-[node name="Character" type="Sprite2D" parent="Body_Positions/Character_Body"]
+[node name="Character" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
 texture = ExtResource("3_2pqv5")
 
-[node name="Character2" type="Sprite2D" parent="Body_Positions/Character_Body"]
+[node name="Character2" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
 rotation = 3.14159
 texture = ExtResource("3_2pqv5")
+
+[node name="Body_Back" type="Node2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Node2D" type="Node2D" parent="Body_Back"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Body_Back/Node2D"]
+position = Vector2(-1.5, -1.5)
+scale = Vector2(2.35593, 1.63095)
+texture = ExtResource("4_1j25o")
+
+[node name="Body_Xray" type="Node2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Body_Xray"]
+scale = Vector2(0.707692, 0.71)
+texture = ExtResource("5_r5ber")
 
 [node name="Is_Dragged" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
