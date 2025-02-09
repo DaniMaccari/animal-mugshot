@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
-[ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/folder.tscn" id="2_pj16t"]
+[ext_resource type="PackedScene" path="res://Scenes/folder.tscn" id="2_pj16t"]
 [ext_resource type="Texture2D" uid="uid://cuj4ytdbumato" path="res://Assets/test_assets/jail.png" id="3_w44ye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]

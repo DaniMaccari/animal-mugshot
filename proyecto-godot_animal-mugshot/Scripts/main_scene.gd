@@ -2,11 +2,10 @@ extends Node2D
 
 const suspects_num : int = 3
 const max_item : int = 1
+const max_atributes : int = 3
 var all_mugshots : Array = []
 var num_target : int
 
-# Array safe body parts [ head, face, back, xray
-var safe_items : Array = [-1, -1, -1, -1]
 @onready var mugshot_positions: Node2D = $Mugshot_Positions
 const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
@@ -14,15 +13,27 @@ func _ready() -> void:
 	Update_Mugshots()
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
 func Update_Props() -> void:
-	for i : int in range(safe_items.size()):
-		safe_items[i] = randi_range(0, 1)
+	#var num_atributes : int = max_atributes
+	#while num_atributes > 0:
+		#
+		#pass
+	for i : int in range(Global.selected_items.size()):
+		# volver a 0
+		Global.modified_items = [[0, 0, false], [0, 0, false], [0, 0, false]]
 		
+		var body_part : int = 1
+		var wich_item : int = randi_range(0, Global.max_items[i])
+		var it_has : int = randi()
+		
+		if i == 0:
+			body_part = randi_range(1, Global.max_items[i].size())
+			
+		Global.modified_items[i] = [body_part, wich_item, it_has]
 
 func Update_Mugshots() -> void:
 	
@@ -44,7 +55,9 @@ func Update_Mugshots() -> void:
 		
 		var new_character = MUGSHOT_SCENE.instantiate()
 		if i == num_target:
+			print("target ", i)
 			new_character.set_target()
+			
 		new_character.Dress_Character()
 		#Dress_Character(new_mugshot)
 		$Mugshots_Canvas.add_child(new_character)
