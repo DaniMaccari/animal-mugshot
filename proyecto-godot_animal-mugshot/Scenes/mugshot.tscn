@@ -1,18 +1,31 @@
-[gd_scene load_steps=15 format=3 uid="uid://cx52usm28awl2"]
+[gd_scene load_steps=28 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
 [ext_resource type="Texture2D" uid="uid://b0i2jc5f6dkf7" path="res://Assets/animals/front/setonio_front.png" id="2_fodys"]
 [ext_resource type="Texture2D" uid="uid://cfkkj2nuk6qbh" path="res://Assets/animals/front/tamy_front.png" id="3_2aw8t"]
+[ext_resource type="Texture2D" uid="uid://dqp2j20kjb2gi" path="res://Assets/animals/front/baby_rabbit_front.png" id="3_s5yr1"]
+[ext_resource type="Texture2D" uid="uid://bgr3n6rgv6fou" path="res://Assets/animals/front/chocu_front.png" id="4_6xlj6"]
 [ext_resource type="Texture2D" uid="uid://rr1wdl0xkjap" path="res://Assets/animals/front/coneja_madre_front.png" id="4_7nl0h"]
 [ext_resource type="Texture2D" uid="uid://bp56x613s1oa3" path="res://Assets/test_assets/prop_test_0.png" id="5_555s6"]
+[ext_resource type="Texture2D" uid="uid://b6t5d2rttc3xu" path="res://Assets/animals/front/hamster_front.png" id="5_bho62"]
 [ext_resource type="Texture2D" uid="uid://ja6i5exa3vat" path="res://Assets/test_assets/prop_test_1.png" id="5_gdoyk"]
-[ext_resource type="Texture2D" uid="uid://di2u5556fhmrk" path="res://Assets/test_assets/character_xray.png" id="5_r5ber"]
 [ext_resource type="Texture2D" uid="uid://b0bytswewil18" path="res://Assets/test_assets/prop_test_2.png" id="6_4fh0b"]
 [ext_resource type="Texture2D" uid="uid://cuj4ytdbumato" path="res://Assets/test_assets/jail.png" id="6_j3lf3"]
+[ext_resource type="Texture2D" uid="uid://dxhwssh6yhn8f" path="res://Assets/animals/front/husky_front.png" id="6_tufqh"]
 [ext_resource type="Texture2D" uid="uid://c3dhkqr3grqa7" path="res://Assets/animals/back/setonio_back.png" id="7_gpwfr"]
 [ext_resource type="Texture2D" uid="uid://vusbrwrrs7ps" path="res://Assets/test_assets/prop_test_3.png" id="7_io8qw"]
+[ext_resource type="Texture2D" uid="uid://sktos6rts018" path="res://Assets/animals/front/mariquita_front.png" id="7_j7lac"]
 [ext_resource type="Texture2D" uid="uid://35ps8s8drs7b" path="res://Assets/animals/back/tamy_back.png" id="8_7ptk1"]
+[ext_resource type="Texture2D" uid="uid://bbjpqlq0necrf" path="res://Assets/animals/front/topo_front.png" id="9_33a77"]
 [ext_resource type="Texture2D" uid="uid://duf8mudkjiwf7" path="res://Assets/animals/back/coneja_madre_back.png" id="9_d7sme"]
+[ext_resource type="Texture2D" uid="uid://bkb6tyy1e88re" path="res://Assets/animals/front/applepie_front.png" id="10_5snif"]
+[ext_resource type="Texture2D" uid="uid://dpcguvn3lwjn8" path="res://Assets/animals/back/baby_rabbit_back.png" id="17_1txh3"]
+[ext_resource type="Texture2D" uid="uid://b8bmsdeefkyh" path="res://Assets/animals/back/chocu_back.png" id="18_do03e"]
+[ext_resource type="Texture2D" uid="uid://devvkr7x4gsk4" path="res://Assets/animals/back/hamster_back.png" id="19_bmjw4"]
+[ext_resource type="Texture2D" uid="uid://ug1rxa6odeg3" path="res://Assets/animals/back/husky_back.png" id="20_kbm66"]
+[ext_resource type="Texture2D" uid="uid://dvicfepn6tbay" path="res://Assets/animals/back/mariquita_back.png" id="21_2tb6k"]
+[ext_resource type="Texture2D" uid="uid://cupshdrmvj7bo" path="res://Assets/animals/back/topo_back.png" id="23_vmglj"]
+[ext_resource type="Texture2D" uid="uid://bseifabmtqgv" path="res://Assets/animals/back/applepie_back.png" id="24_j23hr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfuuw"]
 radius = 37.0
@@ -28,15 +41,45 @@ z_index = 1
 z_index = -1
 scale = Vector2(0.400001, 0.400001)
 
-[node name="SetonioFront" type="Sprite2D" parent="Body_Front/Character_Body"]
+[node name="Setonio_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
 texture = ExtResource("2_fodys")
 
-[node name="TamyFront" type="Sprite2D" parent="Body_Front/Character_Body"]
+[node name="BabyRabit_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
+texture = ExtResource("3_s5yr1")
+
+[node name="Chocu_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("4_6xlj6")
+
+[node name="Hamster_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("5_bho62")
+
+[node name="Huski_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("6_tufqh")
+
+[node name="Marica_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("7_j7lac")
+
+[node name="Tamy_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+scale = Vector2(1, 1)
 texture = ExtResource("3_2aw8t")
 
-[node name="ConejaMadreFront" type="Sprite2D" parent="Body_Front/Character_Body"]
+[node name="Topo_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+scale = Vector2(1, 1)
+texture = ExtResource("9_33a77")
+
+[node name="ApplePie_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("10_5snif")
+
+[node name="ConejaMadre_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
 texture = ExtResource("4_7nl0h")
 
@@ -101,16 +144,52 @@ z_index = 1
 z_index = -1
 scale = Vector2(0.400001, 0.400001)
 
-[node name="SetonioBack" type="Sprite2D" parent="Body_Back/Character_Body"]
+[node name="Setonio_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
 texture = ExtResource("7_gpwfr")
 
-[node name="TamyBack" type="Sprite2D" parent="Body_Back/Character_Body"]
+[node name="BabyRabit_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
+texture = ExtResource("17_1txh3")
+
+[node name="Chocu_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+position = Vector2(-19.9999, 0)
+texture = ExtResource("18_do03e")
+
+[node name="Hamster_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+texture = ExtResource("19_bmjw4")
+
+[node name="Huski_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+texture = ExtResource("20_kbm66")
+
+[node name="Marica_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+position = Vector2(-12.5, 0)
+texture = ExtResource("21_2tb6k")
+
+[node name="Tamy_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+position = Vector2(7.49998, 0)
+scale = Vector2(1, 1)
 texture = ExtResource("8_7ptk1")
 
-[node name="ConejaMadreBack" type="Sprite2D" parent="Body_Back/Character_Body"]
+[node name="Topo_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
+position = Vector2(-2.49999, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("23_vmglj")
+
+[node name="ApplePie_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+position = Vector2(-4.99999, 0)
+texture = ExtResource("24_j23hr")
+
+[node name="ConejaMadre_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
+visible = false
+position = Vector2(15, 0)
 texture = ExtResource("9_d7sme")
 
 [node name="Body_Back_Prop" type="Node2D" parent="Body_Back"]
@@ -144,23 +223,49 @@ z_index = 1
 
 [node name="Character_Body" type="Node2D" parent="Body_Xray"]
 z_index = -1
+scale = Vector2(0.400001, 0.400001)
 
-[node name="Back" type="Sprite2D" parent="Body_Xray/Character_Body"]
+[node name="Setonio_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
-scale = Vector2(0.707692, 0.69)
-texture = ExtResource("5_r5ber")
+texture = ExtResource("2_fodys")
 
-[node name="Back2" type="Sprite2D" parent="Body_Xray/Character_Body"]
+[node name="BabyRabit_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
-rotation = -3.14159
-scale = Vector2(0.707692, 0.69)
-texture = ExtResource("5_r5ber")
+texture = ExtResource("3_s5yr1")
 
-[node name="Back3" type="Sprite2D" parent="Body_Xray/Character_Body"]
+[node name="Chocu_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
-rotation = -3.14159
-scale = Vector2(0.707692, 0.69)
-texture = ExtResource("5_r5ber")
+texture = ExtResource("4_6xlj6")
+
+[node name="Hamster_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+texture = ExtResource("5_bho62")
+
+[node name="Huski_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+texture = ExtResource("6_tufqh")
+
+[node name="Marica_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+texture = ExtResource("7_j7lac")
+
+[node name="Tamy_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+scale = Vector2(1, 1)
+texture = ExtResource("3_2aw8t")
+
+[node name="Topo_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+scale = Vector2(1, 1)
+texture = ExtResource("9_33a77")
+
+[node name="ApplePie_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+texture = ExtResource("10_5snif")
+
+[node name="ConejaMadre_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+texture = ExtResource("4_7nl0h")
 
 [node name="Xray_Prop" type="Node2D" parent="Body_Xray"]
 

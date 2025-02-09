@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgt3ue85ep1bf"]
+
+[ext_resource type="Texture2D" uid="uid://bmt6fjti0hrwd" path="res://Assets/test_assets/bg.png" id="1_7giaq"]
+
+[sub_resource type="Curve" id="Curve_x34gw"]
+_data = [Vector2(0.00561798, 0.263736), 0.0, 4.6945, 0, 0, Vector2(0.398876, 1), 0.228205, 0.228205, 0, 0, Vector2(1, 0.197802), -0.670644, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xovnx"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.186667, 0.466667, 0.76)
+colors = PackedColorArray(1, 1, 1, 1, 0.501961, 0, 0.819608, 1, 0, 0.352941, 0.870588, 1, 0, 0.607843, 1, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 15
+texture = ExtResource("1_7giaq")
+direction = Vector2(0, -1)
+spread = 80.0
+gravity = Vector2(0, -200)
+initial_velocity_min = 40.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.8
+scale_amount_curve = SubResource("Curve_x34gw")
+color_ramp = SubResource("Gradient_xovnx")

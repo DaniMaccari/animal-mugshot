@@ -12,6 +12,7 @@ const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 func _ready() -> void:
 	Update_Props()
 	Update_Mugshots()
+	$UI.Set_Timer()
 	pass
 
 func _process(delta: float) -> void:
