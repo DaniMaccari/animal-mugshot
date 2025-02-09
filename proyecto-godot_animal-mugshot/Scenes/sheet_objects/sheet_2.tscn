@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0utg7yi2jhkd"]
+[gd_scene load_steps=31 format=3 uid="uid://c0utg7yi2jhkd"]
 
 [ext_resource type="Texture2D" uid="uid://48420use7xap" path="res://Assets/sheets/sheet_2.png" id="1_g11yb"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_eevxv"]
@@ -21,12 +21,15 @@
 [ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="19_uysru"]
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="20_y7b7w"]
 [ext_resource type="Texture2D" uid="uid://bp56x613s1oa3" path="res://Assets/test_assets/prop_test_0.png" id="21_33xhs"]
+[ext_resource type="Texture2D" uid="uid://cxevrk7bg33h2" path="res://Assets/accesories/back/back_cigar_1.png" id="21_f5grx"]
 [ext_resource type="Texture2D" uid="uid://ja6i5exa3vat" path="res://Assets/test_assets/prop_test_1.png" id="22_206he"]
 [ext_resource type="Texture2D" uid="uid://b0bytswewil18" path="res://Assets/test_assets/prop_test_2.png" id="23_b3pet"]
+[ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="24_jyry6"]
 [ext_resource type="Texture2D" uid="uid://vusbrwrrs7ps" path="res://Assets/test_assets/prop_test_3.png" id="24_syr1o"]
 [ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_tnvd1"]
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_xwxr8"]
 [ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_6ogkl"]
+[ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_aomnx"]
 
 [node name="Folder" type="Sprite2D"]
 z_index = 5
@@ -150,31 +153,21 @@ texture = ExtResource("20_y7b7w")
 [node name="Empty" type="Node" parent="Objects_Back"]
 
 [node name="Body" type="Node2D" parent="Objects_Back"]
-position = Vector2(1, -21)
+position = Vector2(1, -28)
+rotation = -0.204654
+scale = Vector2(0.475442, 0.475442)
 
-[node name="Head_4" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_0" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(2, -4)
-scale = Vector2(1.56414, 1.42442)
-texture = ExtResource("21_33xhs")
+texture = ExtResource("21_f5grx")
 
-[node name="Head_1" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_3" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(-1.99999, -76)
-scale = Vector2(0.644737, 0.688889)
-texture = ExtResource("22_206he")
+texture = ExtResource("24_jyry6")
 
-[node name="Head_2" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_7" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(0, -77)
-scale = Vector2(0.736842, 0.688889)
-texture = ExtResource("23_b3pet")
-
-[node name="Head_3" type="Sprite2D" parent="Objects_Back/Body"]
-visible = false
-position = Vector2(-1, -78)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("24_syr1o")
+texture = ExtResource("28_aomnx")
 
 [node name="Objects_Xray" type="Node2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jlb0trok83do"]
+[gd_scene load_steps=31 format=3 uid="uid://jlb0trok83do"]
 
 [ext_resource type="Texture2D" uid="uid://buv6w31a122e3" path="res://Assets/sheets/sheet_1.png" id="1_p34op"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_2odfs"]
@@ -24,9 +24,12 @@
 [ext_resource type="Texture2D" uid="uid://db78xvxholqdi" path="res://Assets/accesories/top/top_tie_1.png" id="18_1wm6h"]
 [ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="19_63m64"]
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="20_gsp2f"]
+[ext_resource type="Texture2D" uid="uid://cxevrk7bg33h2" path="res://Assets/accesories/back/back_cigar_1.png" id="21_62esu"]
+[ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="24_erlox"]
 [ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_bb7ca"]
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_ji256"]
 [ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_kjrea"]
+[ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_mqone"]
 
 [node name="Folder" type="Sprite2D"]
 z_index = 5
@@ -152,30 +155,19 @@ position = Vector2(52, 0)
 
 [node name="Body" type="Node2D" parent="Objects_Back"]
 position = Vector2(1, -21)
+scale = Vector2(0.6778, 0.6778)
 
-[node name="Head_4" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_0" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(2, -4)
-scale = Vector2(1.56414, 1.42442)
-texture = ExtResource("3_rt3jh")
+texture = ExtResource("21_62esu")
 
-[node name="Head_1" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_3" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(-1.99999, -76)
-scale = Vector2(0.644737, 0.688889)
-texture = ExtResource("4_pqfcg")
+texture = ExtResource("24_erlox")
 
-[node name="Head_2" type="Sprite2D" parent="Objects_Back/Body"]
+[node name="Back_7" type="Sprite2D" parent="Objects_Back/Body"]
 visible = false
-position = Vector2(0, -77)
-scale = Vector2(0.736842, 0.688889)
-texture = ExtResource("5_w6v1r")
-
-[node name="Head_3" type="Sprite2D" parent="Objects_Back/Body"]
-visible = false
-position = Vector2(-1, -78)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("6_vqo80")
+texture = ExtResource("28_mqone")
 
 [node name="Objects_Xray" type="Node2D" parent="."]
 position = Vector2(51, -3)

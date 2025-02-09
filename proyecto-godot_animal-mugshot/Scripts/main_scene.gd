@@ -6,11 +6,14 @@ const max_atributes : int = 3
 var all_mugshots : Array = []
 var num_target : int
 
+
 @onready var mugshot_positions: Node2D = $Mugshot_Positions
 const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
 func _ready() -> void:
+	
 	$Mugshots_Canvas.entered_jail.connect(New_Round)
+	$UI.time_ended.connect(Game_Over)
 	
 	Update_Props()
 	Update_Folders()
@@ -19,11 +22,23 @@ func _ready() -> void:
 	pass
 
 func New_Round() -> void:
-	print("new_round")
-	# cerrar cortinas
-	Update_Props()
-	Update_Folders()
-	Update_Mugshots()
+	if Global.reseting_level == false:
+		Global.reseting_level = true
+		print("new_round")
+		# cerrar cortinas
+		$Cortinas.Close_Curtains()
+		await get_tree().create_timer(1.0).timeout
+		
+		# actualizar todo
+		Update_Props()
+		Update_Folders()
+		Update_Mugshots()
+		
+		await get_tree().create_timer(0.2).timeout
+		$Cortinas.Open_Curtains()
+
+func Game_Over() -> void:
+	$Cortinas.Game_Over()
 
 func Update_Props() -> void:
 	# volver a 0
@@ -46,6 +61,9 @@ func Update_Folders() -> void:
 	var item_counter : int = 0
 	
 	for folder_num : int in range($Folders.get_child_count()):
+		$Folders.get_child(folder_num).clean_folder()
+		$Folders.get_child(folder_num).position = $Folders_Position.get_child(folder_num).position
+		
 		if folder_num == empty_folder:
 			$Folders.get_child(folder_num).get_child(4).show()
 		else:

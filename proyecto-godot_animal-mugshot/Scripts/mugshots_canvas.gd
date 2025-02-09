@@ -7,4 +7,5 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func Entered_Jail() -> void:
+	print("target in jail")
 	emit_signal("entered_jail")

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal time_ended
+
 @export var max_timer_value : int= 240
 var timer_value : int = 0
 const left_space : int = 32
@@ -11,6 +13,10 @@ func Set_Timer() -> void:
 func _on_timer_timeout() -> void:
 	timer_value -= 1
 	$TextureProgressBar.value = timer_value
+	
+	if timer_value <= 0:
+		$CPUParticles2D.emitting = false
+		emit_signal("time_ended")
 
 func _process(delta: float) -> void:
 	var progress_bar = $TextureProgressBar

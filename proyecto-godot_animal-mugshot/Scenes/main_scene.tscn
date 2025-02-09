@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=22 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
@@ -7,16 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://c0utg7yi2jhkd" path="res://Scenes/sheet_objects/sheet_2.tscn" id="3_adixa"]
 [ext_resource type="Texture2D" uid="uid://65epl0gmqv0m" path="res://Assets/UI/carcel_la_buena.png" id="4_0v6yf"]
 [ext_resource type="PackedScene" uid="uid://ca0c3piu7tun5" path="res://Scenes/sheet_objects/sheet_3.tscn" id="4_1ibuc"]
+[ext_resource type="Script" path="res://Scripts/jail.gd" id="4_ec4uu"]
 [ext_resource type="PackedScene" uid="uid://co12x8texasce" path="res://Scenes/sheet_objects/sheet_4.tscn" id="5_24iv2"]
 [ext_resource type="Texture2D" uid="uid://ca33byjdbnkoc" path="res://Assets/sheets/fondo.png" id="5_p1ppf"]
 [ext_resource type="Texture2D" uid="uid://c183i4uvv27rx" path="res://Assets/UI/doors_open.png" id="5_yn1rw"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="6_x88f1"]
 [ext_resource type="Texture2D" uid="uid://ntohi6t5jgba" path="res://Assets/UI/lifebar_2.png" id="7_vbxj0"]
+[ext_resource type="Texture2D" uid="uid://nownobgr0xcd" path="res://Assets/UI/doors_closed.png" id="8_87bul"]
 [ext_resource type="Texture2D" uid="uid://dlcslv1sj6oov" path="res://Assets/UI/lifebar_1.png" id="8_pbhnt"]
 [ext_resource type="PackedScene" uid="uid://bgt3ue85ep1bf" path="res://Scenes/fire_particles.tscn" id="10_5jdef"]
+[ext_resource type="Script" path="res://Scripts/cortinas.gd" id="15_n0m8r"]
+[ext_resource type="Texture2D" uid="uid://bf1yprr0xcyxf" path="res://Assets/UI/cortina.png" id="16_3tebr"]
+[ext_resource type="Texture2D" uid="uid://ca15ew7xteg6n" path="res://Assets/test_assets/fin.png" id="18_ua64b"]
+[ext_resource type="Texture2D" uid="uid://bbrqka3nkmeh5" path="res://Assets/test_assets/bien.png" id="19_86hsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]
-size = Vector2(649, 465)
+size = Vector2(898.361, 726.066)
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_t7gi6")
@@ -64,8 +70,9 @@ script = ExtResource("3_170mx")
 
 [node name="Jail" type="Node2D" parent="." groups=["Jail"]]
 z_index = -2
-position = Vector2(640, 652)
-scale = Vector2(0.604048, 0.604048)
+position = Vector2(619, 654)
+scale = Vector2(0.61, 0.61)
+script = ExtResource("4_ec4uu")
 
 [node name="Jail_Newspaper" type="Sprite2D" parent="Jail"]
 position = Vector2(-105.952, -3.31108)
@@ -74,19 +81,28 @@ scale = Vector2(1.42003, -1.42003)
 texture = ExtResource("3_0mwm3")
 
 [node name="Jail_Background" type="Sprite2D" parent="Jail"]
+position = Vector2(11.8827, 0)
 texture = ExtResource("4_0v6yf")
 
 [node name="Jail_Door_Open" type="Sprite2D" parent="Jail"]
+visible = false
 position = Vector2(2, 63.7304)
 rotation = -0.138912
 texture = ExtResource("5_yn1rw")
 
+[node name="Jail_Door_Closed" type="Sprite2D" parent="Jail"]
+position = Vector2(13.8827, 63.7304)
+rotation = -0.138912
+texture = ExtResource("8_87bul")
+
 [node name="Jail_Marker" type="Marker2D" parent="Jail"]
+position = Vector2(11.8827, 0)
 
 [node name="Area2D" type="Area2D" parent="Jail" groups=["Jail"]]
+position = Vector2(11.8827, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jail/Area2D"]
-position = Vector2(11.5, 42.5)
+position = Vector2(140.576, 173.033)
 shape = SubResource("RectangleShape2D_g4yja")
 
 [node name="Folders" type="Node2D" parent="."]
@@ -139,4 +155,38 @@ wait_time = 0.3
 [node name="CPUParticles2D" parent="UI" instance=ExtResource("10_5jdef")]
 position = Vector2(951, 7)
 
+[node name="Cortinas" type="Node2D" parent="."]
+z_index = 15
+script = ExtResource("15_n0m8r")
+
+[node name="Fin" type="Sprite2D" parent="Cortinas"]
+visible = false
+z_index = 1
+position = Vector2(420, 300)
+texture = ExtResource("18_ua64b")
+
+[node name="Good" type="Sprite2D" parent="Cortinas"]
+visible = false
+z_index = 1
+position = Vector2(420, 400)
+texture = ExtResource("19_86hsq")
+
+[node name="Cortina" type="Sprite2D" parent="Cortinas"]
+position = Vector2(-240, 380)
+scale = Vector2(1.2, 1.1)
+texture = ExtResource("16_3tebr")
+
+[node name="Cortina2" type="Sprite2D" parent="Cortinas"]
+position = Vector2(1111, 380)
+scale = Vector2(-1.2, 1.1)
+texture = ExtResource("16_3tebr")
+
+[node name="Marker" type="Marker2D" parent="Cortinas"]
+position = Vector2(-240, 380)
+
+[node name="Marker2" type="Marker2D" parent="Cortinas"]
+position = Vector2(1111, 380)
+
+[connection signal="area_entered" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="UI/Timer" to="UI" method="_on_timer_timeout"]

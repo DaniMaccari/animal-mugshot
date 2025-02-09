@@ -25,8 +25,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if dragging:
 		position = lerp(position, get_global_mouse_position() - of_set, delta *15)
-	else:
-		position = my_position
+	else:	
+		if position.is_equal_approx(my_position):
+			position = my_position
+		else:
+			position = lerp(position, my_position, delta *20)
+		
 
 func set_grid_position( grid_position : Vector2) -> void:
 	my_position = grid_position
@@ -115,9 +119,10 @@ func _on_is_dragged_button_down() -> void:
 	$CPUParticles2D.emitting = true
 
 func _on_is_dragged_button_up() -> void:
-	if in_jail && is_target:
-		my_position =  get_parent().get_parent().get_node("Jail").position
+	if is_target and in_jail:
+		my_position = get_parent().get_parent().get_node("Jail").position
 		get_parent().Entered_Jail()
+		print("target in jail")
 	dragging = false
 	z_index = original_z_index
 	$CPUParticles2D.emitting = false
@@ -131,6 +136,9 @@ func _on_is_dragged_pressed() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Jail"):
 		in_jail = true
+		if is_target:
+			my_position = get_parent().get_parent().get_node("Jail").position
 		print("Estoy en la carcer")
+
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	in_jail = false

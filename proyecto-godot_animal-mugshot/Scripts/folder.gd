@@ -11,6 +11,17 @@ func _process(delta: float) -> void:
 		position = lerp(position, get_global_mouse_position() - of_set, delta *10)
 	pass
 
+func clean_folder() -> void:
+	$Add.hide()
+	for i : int in range($Objects_Front/Head.get_child_count()):
+		$Objects_Front/Head.get_child(i).hide()
+	for i : int in range($Objects_Front/Body.get_child_count()):
+		$Objects_Front/Body.get_child(i).hide()
+	for i : int in range($Objects_Back/Body.get_child_count()):
+		$Objects_Back/Body.get_child(i).hide()
+	for i : int in range($Objects_Xray/Body.get_child_count()):
+		$Objects_Xray/Body.get_child(i).hide()
+
 func _on_button_button_down() -> void:
 	get_viewport().set_input_as_handled()
 	dragging = true
