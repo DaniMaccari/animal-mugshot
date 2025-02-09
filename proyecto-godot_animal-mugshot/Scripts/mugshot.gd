@@ -112,12 +112,15 @@ func _on_is_dragged_button_down() -> void:
 	dragging = true
 	of_set = get_global_mouse_position() - global_position
 	z_index = 10
+	$CPUParticles2D.emitting = true
 
 func _on_is_dragged_button_up() -> void:
 	if in_jail && is_target:
 		my_position =  get_parent().get_parent().get_node("Jail").position
+		get_parent().Entered_Jail()
 	dragging = false
 	z_index = original_z_index
+	$CPUParticles2D.emitting = false
 
 func _on_is_dragged_pressed() -> void:
 	if my_position == position:

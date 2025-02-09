@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cx52usm28awl2"]
+[gd_scene load_steps=47 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
 [ext_resource type="Texture2D" uid="uid://b0i2jc5f6dkf7" path="res://Assets/animals/front/setonio_front.png" id="2_fodys"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://db78xvxholqdi" path="res://Assets/accesories/top/top_tie_1.png" id="27_c5jms"]
 [ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="28_bkwyl"]
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="29_aexqn"]
+[ext_resource type="PackedScene" uid="uid://euou8n2xf58b" path="res://Scenes/swet_particles.tscn" id="45_ystt2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfuuw"]
 radius = 37.0
@@ -363,6 +364,10 @@ offset_bottom = 69.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_jfuuw")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("45_ystt2")]
+position = Vector2(-39, -66)
+emitting = false
 
 [connection signal="button_down" from="Is_Dragged" to="." method="_on_is_dragged_button_down"]
 [connection signal="button_up" from="Is_Dragged" to="." method="_on_is_dragged_button_up"]

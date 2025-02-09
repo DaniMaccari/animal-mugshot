@@ -10,15 +10,20 @@ var num_target : int
 const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
 func _ready() -> void:
+	$Mugshots_Canvas.entered_jail.connect(New_Round)
+	
 	Update_Props()
 	Update_Folders()
 	Update_Mugshots()
 	$UI.Set_Timer()
 	pass
 
-func _process(delta: float) -> void:
-	pass
-
+func New_Round() -> void:
+	print("new_round")
+	# cerrar cortinas
+	Update_Props()
+	Update_Folders()
+	Update_Mugshots()
 
 func Update_Props() -> void:
 	# volver a 0

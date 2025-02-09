@@ -1,26 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://euou8n2xf58b"]
+[gd_scene load_steps=5 format=3 uid="uid://euou8n2xf58b"]
 
-[ext_resource type="Texture2D" uid="uid://xxx1xd42iekr" path="res://Assets/UI/star.png" id="1_3yfby"]
+[ext_resource type="Texture2D" uid="uid://c5f5o20asy72a" path="res://Assets/UI/gotita.png" id="1_3tptd"]
+
+[sub_resource type="Curve" id="Curve_e23wn"]
+min_value = -50.0
+max_value = -45.0
+_data = [Vector2(0, -45.5), 0.0, -0.620365, 0, 0, Vector2(1, -48.25), -4.47819, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+metadata/_snap_count = 20
 
 [sub_resource type="Curve" id="Curve_x34gw"]
-_data = [Vector2(0, 0.153846), 0.0, 9.0467, 0, 0, Vector2(0.151685, 1), 0.434676, 0.434676, 0, 0, Vector2(0.393258, 0.901099), -1.09087, -1.09087, 0, 0, Vector2(0.994382, 0.186813), 0.173871, 0.0, 0, 0]
-point_count = 4
+bake_resolution = 10
+_data = [Vector2(0, 0.153846), 0.0, 9.0467, 0, 0, Vector2(0.348315, 1), 0.434676, 0.434676, 0, 0, Vector2(0.983146, 0.43956), -0.935499, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_xovnx"]
-offsets = PackedFloat32Array(0, 0.186667, 0.466667, 0.706667, 0.86)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0.572025, 0.823035, 1, 0.999998, 0.124096, 0.95044, 1, 0.684877, 0.14894, 0.740416, 1, 0.44932, 0.0599619, 0.552203, 1)
+[sub_resource type="Gradient" id="Gradient_duhw0"]
+offsets = PackedFloat32Array(0, 0.566667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
-amount = 15
-texture = ExtResource("1_3yfby")
-emission_shape = 3
-emission_rect_extents = Vector2(10, 1)
-direction = Vector2(0, -1)
-spread = 30.0
-gravity = Vector2(0, -150)
-initial_velocity_max = 20.0
-angle_max = 90.0
+z_index = 5
+amount = 3
+lifetime = 0.8
+texture = ExtResource("1_3tptd")
+direction = Vector2(-4, -3)
+gravity = Vector2(0, 120)
+initial_velocity_min = 120.0
+initial_velocity_max = 150.0
+angle_min = -45.0
+angle_max = -45.0
+angle_curve = SubResource("Curve_e23wn")
 scale_amount_min = 0.1
 scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_x34gw")
-color_ramp = SubResource("Gradient_xovnx")
+color_ramp = SubResource("Gradient_duhw0")
