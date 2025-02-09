@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca0c3piu7tun5"]
+
+[ext_resource type="Texture2D" uid="uid://davnxia8l3h55" path="res://Assets/sheets/sheet_3.png" id="1_1ol4r"]
+[ext_resource type="Script" path="res://Scripts/folder.gd" id="2_y8j7b"]
+
+[node name="Folder" type="Sprite2D"]
+z_index = 5
+texture = ExtResource("1_1ol4r")
+script = ExtResource("2_y8j7b")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.475884
+anchor_top = 0.495811
+anchor_right = 0.799035
+anchor_bottom = 0.657246
+offset_left = -310.0
+offset_top = -376.132
+offset_right = -285.0
+offset_bottom = -325.132
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0786914
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
