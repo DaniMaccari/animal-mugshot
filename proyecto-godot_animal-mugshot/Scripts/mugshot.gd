@@ -74,32 +74,38 @@ func Dress_Character():
 		else:
 			$Body_Xray.get_child(i).get_child(new_item).show()
 
-	# edit target character
-	for i : int in range(Global.modified_items.size()): # [parte del cuerpo, item, si/no lo tiene]
-		if  i == 0: # Body_Front
-			if Global.modified_items[i][2] == true: # se tiene que enseñar
-				for j : int in range($Body_Front.get_child(Global.modified_items[i][0]).get_children_count()):
-					$Body_Front.get_child(Global.modified_items[i][0]).get_child(j).hide()
-				$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).show()
+	# --- edit target character ------
+	if is_target:
+		for i : int in range(Global.modified_items.size()): # [parte del cuerpo, item, si/no lo tiene]
+			if  i == 0: # Body_Front
+				print("item, ", Global.modified_items[i])
+				if Global.modified_items[i][2] == true: # se tiene que enseñar
+					print("PONER GORRO ", Global.modified_items[i][1])
+					for j : int in range($Body_Front.get_child(Global.modified_items[i][0]).get_child_count()):
+						$Body_Front.get_child(Global.modified_items[i][0]).get_child(j).hide()
+						print("body part, ", $Body_Front.get_child(Global.modified_items[i][0]).get_child(j))
+					$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).show()
+				
+				else:
+					$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).hide()
 			
-			else:
-				$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).hide()
-		
-		elif i == 1: # Body_Back
-			if Global.modified_items[i][2] == true:
-				for j : int in range($Body_Back.get_child(1).get_children_count()):
-					$Body_Back.get_child(1).get_child(j).hide()
-				$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).show()
-			else:
-				$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).hide()
-		
-		elif i == 2: # Body_Xray
-			if Global.modified_items[i][2] == true:
-				for j : int in range($Body_Xray.get_child(1).get_children_count()):
-					$Body_Xray.get_child(1).get_child(j).hide()
-				$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).show()
-			else:
-				$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).hide()
+			elif i == 1: # Body_Back
+				if Global.modified_items[i][2] == true:
+					for j : int in range($Body_Back.get_child(1).get_child_count()):
+						$Body_Back.get_child(1).get_child(j).hide()
+						print("body back", $Body_Back.get_child(1).get_child(j))
+					print($Body_Back.get_child(1).get_child(Global.modified_items[i][1]))
+					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).show()
+				else:
+					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).hide()
+			
+			elif i == 2: # Body_Xray
+				if Global.modified_items[i][2] == true:
+					for j : int in range($Body_Xray.get_child(1).get_child_count()):
+						$Body_Xray.get_child(1).get_child(j).hide()
+					$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).show()
+				else:
+					$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).hide()
 
 func _on_is_dragged_button_down() -> void:
 	dragging = true

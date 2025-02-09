@@ -1,11 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx52usm28awl2"]
+[gd_scene load_steps=15 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
-[ext_resource type="Texture2D" uid="uid://dklqyher7s1ds" path="res://Assets/test_assets/character.png" id="3_2pqv5"]
-[ext_resource type="Texture2D" uid="uid://b5qolrc8xesk5" path="res://Assets/test_assets/prop2.png" id="4_1j25o"]
-[ext_resource type="Texture2D" uid="uid://py7nm3i2vuc7" path="res://Assets/test_assets/prop1.png" id="5_5bg7t"]
+[ext_resource type="Texture2D" uid="uid://b0i2jc5f6dkf7" path="res://Assets/animals/front/setonio_front.png" id="2_fodys"]
+[ext_resource type="Texture2D" uid="uid://cfkkj2nuk6qbh" path="res://Assets/animals/front/tamy_front.png" id="3_2aw8t"]
+[ext_resource type="Texture2D" uid="uid://rr1wdl0xkjap" path="res://Assets/animals/front/coneja_madre_front.png" id="4_7nl0h"]
+[ext_resource type="Texture2D" uid="uid://bp56x613s1oa3" path="res://Assets/test_assets/prop_test_0.png" id="5_555s6"]
+[ext_resource type="Texture2D" uid="uid://ja6i5exa3vat" path="res://Assets/test_assets/prop_test_1.png" id="5_gdoyk"]
 [ext_resource type="Texture2D" uid="uid://di2u5556fhmrk" path="res://Assets/test_assets/character_xray.png" id="5_r5ber"]
+[ext_resource type="Texture2D" uid="uid://b0bytswewil18" path="res://Assets/test_assets/prop_test_2.png" id="6_4fh0b"]
 [ext_resource type="Texture2D" uid="uid://cuj4ytdbumato" path="res://Assets/test_assets/jail.png" id="6_j3lf3"]
+[ext_resource type="Texture2D" uid="uid://c3dhkqr3grqa7" path="res://Assets/animals/back/setonio_back.png" id="7_gpwfr"]
+[ext_resource type="Texture2D" uid="uid://vusbrwrrs7ps" path="res://Assets/test_assets/prop_test_3.png" id="7_io8qw"]
+[ext_resource type="Texture2D" uid="uid://35ps8s8drs7b" path="res://Assets/animals/back/tamy_back.png" id="8_7ptk1"]
+[ext_resource type="Texture2D" uid="uid://duf8mudkjiwf7" path="res://Assets/animals/back/coneja_madre_back.png" id="9_d7sme"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfuuw"]
 radius = 37.0
@@ -19,58 +26,118 @@ z_index = 1
 
 [node name="Character_Body" type="Node2D" parent="Body_Front"]
 z_index = -1
+scale = Vector2(0.400001, 0.400001)
 
-[node name="Character" type="Sprite2D" parent="Body_Front/Character_Body"]
+[node name="SetonioFront" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
-texture = ExtResource("3_2pqv5")
+texture = ExtResource("2_fodys")
 
-[node name="Character2" type="Sprite2D" parent="Body_Front/Character_Body"]
+[node name="TamyFront" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
-rotation = 3.14159
-texture = ExtResource("3_2pqv5")
+texture = ExtResource("3_2aw8t")
 
-[node name="Head_Prop" type="Node2D" parent="Body_Front"]
+[node name="ConejaMadreFront" type="Sprite2D" parent="Body_Front/Character_Body"]
+visible = false
+texture = ExtResource("4_7nl0h")
+
+[node name="Head_Front_Prop" type="Node2D" parent="Body_Front"]
 z_index = 2
 
-[node name="Prop2" type="Sprite2D" parent="Body_Front/Head_Prop"]
+[node name="Head_0" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
 visible = false
-position = Vector2(-2, -92)
-texture = ExtResource("4_1j25o")
+position = Vector2(1, -70)
+scale = Vector2(0.671053, 0.611111)
+texture = ExtResource("5_555s6")
 
-[node name="Prop1" type="Sprite2D" parent="Body_Front/Head_Prop"]
+[node name="Head_1" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
 visible = false
-position = Vector2(6, -69)
-texture = ExtResource("5_5bg7t")
+position = Vector2(1, -83)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("5_gdoyk")
+
+[node name="Head_2" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
+visible = false
+position = Vector2(0, -77)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("6_4fh0b")
+
+[node name="Head_3" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
+visible = false
+position = Vector2(-1, -78)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("7_io8qw")
+
+[node name="Body_Front_Prop" type="Node2D" parent="Body_Front"]
+z_index = 2
+
+[node name="Head_4" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
+visible = false
+position = Vector2(1, -70)
+scale = Vector2(0.671053, 0.611111)
+texture = ExtResource("5_555s6")
+
+[node name="Head_1" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
+visible = false
+position = Vector2(1, 14)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("5_gdoyk")
+
+[node name="Head_2" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
+visible = false
+position = Vector2(0, -77)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("6_4fh0b")
+
+[node name="Head_3" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
+visible = false
+position = Vector2(-1, -78)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("7_io8qw")
 
 [node name="Body_Back" type="Node2D" parent="."]
 z_index = 1
 
 [node name="Character_Body" type="Node2D" parent="Body_Back"]
 z_index = -1
+scale = Vector2(0.400001, 0.400001)
 
-[node name="Back" type="Sprite2D" parent="Body_Back/Character_Body"]
+[node name="SetonioBack" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
-scale = Vector2(0.707692, 0.69)
-texture = ExtResource("5_r5ber")
+texture = ExtResource("7_gpwfr")
 
-[node name="Back2" type="Sprite2D" parent="Body_Back/Character_Body"]
+[node name="TamyBack" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
-rotation = -3.14159
-scale = Vector2(0.707692, 0.69)
-texture = ExtResource("5_r5ber")
+texture = ExtResource("8_7ptk1")
 
-[node name="Head_Prop" type="Node2D" parent="Body_Back"]
-z_index = 2
-
-[node name="Prop2" type="Sprite2D" parent="Body_Back/Head_Prop"]
+[node name="ConejaMadreBack" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
-position = Vector2(-2, -92)
-texture = ExtResource("4_1j25o")
+texture = ExtResource("9_d7sme")
 
-[node name="Prop1" type="Sprite2D" parent="Body_Back/Head_Prop"]
+[node name="Body_Back_Prop" type="Node2D" parent="Body_Back"]
+
+[node name="Body_4" type="Sprite2D" parent="Body_Back/Body_Back_Prop"]
 visible = false
-position = Vector2(6, -69)
-texture = ExtResource("5_5bg7t")
+position = Vector2(1, 9)
+scale = Vector2(0.671053, 0.611111)
+texture = ExtResource("5_555s6")
+
+[node name="Body_1" type="Sprite2D" parent="Body_Back/Body_Back_Prop"]
+visible = false
+position = Vector2(-1, 4.99999)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("5_gdoyk")
+
+[node name="Body_2" type="Sprite2D" parent="Body_Back/Body_Back_Prop"]
+visible = false
+position = Vector2(0, 8)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("6_4fh0b")
+
+[node name="Body_3" type="Sprite2D" parent="Body_Back/Body_Back_Prop"]
+visible = false
+position = Vector2(1, 5)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("7_io8qw")
 
 [node name="Body_Xray" type="Node2D" parent="."]
 z_index = 1
@@ -84,6 +151,12 @@ scale = Vector2(0.707692, 0.69)
 texture = ExtResource("5_r5ber")
 
 [node name="Back2" type="Sprite2D" parent="Body_Xray/Character_Body"]
+visible = false
+rotation = -3.14159
+scale = Vector2(0.707692, 0.69)
+texture = ExtResource("5_r5ber")
+
+[node name="Back3" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
 rotation = -3.14159
 scale = Vector2(0.707692, 0.69)

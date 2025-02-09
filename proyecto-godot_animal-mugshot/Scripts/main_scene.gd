@@ -10,6 +10,7 @@ var num_target : int
 const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
 func _ready() -> void:
+	Update_Props()
 	Update_Mugshots()
 	pass
 
@@ -18,27 +19,22 @@ func _process(delta: float) -> void:
 
 
 func Update_Props() -> void:
-	#var num_atributes : int = max_atributes
-	#while num_atributes > 0:
-		#
-		#pass
-	for i : int in range(Global.selected_items.size()):
-		# volver a 0
-		Global.modified_items = [[0, 0, false], [0, 0, false], [0, 0, false]]
-		
+	# volver a 0
+	Global.modified_items = [[0, 0, false], [0, 0, false], [0, 0, false]]
+	
+	for i : int in range(Global.modified_items.size()):
 		var body_part : int = 1
-		var wich_item : int = randi_range(0, Global.max_items[i])
-		var it_has : int = randi()
+		var wich_item : int = randi_range(0, Global.max_items[i][0] -1) # DEBUG esto puede dar error
+		var it_has : bool = randi() % 2 == 0
 		
 		if i == 0:
 			body_part = randi_range(1, Global.max_items[i].size())
 			
 		Global.modified_items[i] = [body_part, wich_item, it_has]
+		print("target_items ", Global.modified_items[i])
+	
 
 func Update_Mugshots() -> void:
-	
-	# select new bad
-	num_target = randi_range(0, suspects_num)
 	
 	# clean old characters
 	for mugshot in all_mugshots:
@@ -47,6 +43,9 @@ func Update_Mugshots() -> void:
 	all_mugshots.clear()
 	
 	# new characters
+	num_target = randi_range(0, suspects_num -1)
+	print("target1 ", num_target)
+	
 	for i : int in range(suspects_num):
 		
 		if i >= mugshot_positions.get_child_count():
@@ -55,8 +54,8 @@ func Update_Mugshots() -> void:
 		
 		var new_character = MUGSHOT_SCENE.instantiate()
 		if i == num_target:
-			print("target ", i)
 			new_character.set_target()
+			print("target2 ", num_target)
 			
 		new_character.Dress_Character()
 		#Dress_Character(new_mugshot)

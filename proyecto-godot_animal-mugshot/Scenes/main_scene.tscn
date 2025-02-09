@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=7 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
 [ext_resource type="PackedScene" uid="uid://c0utg7yi2jhkd" path="res://Scenes/sheet_objects/sheet_2.tscn" id="3_adixa"]
 [ext_resource type="Texture2D" uid="uid://cuj4ytdbumato" path="res://Assets/test_assets/jail.png" id="3_w44ye"]
+[ext_resource type="Texture2D" uid="uid://ca33byjdbnkoc" path="res://Assets/sheets/fondo.png" id="5_p1ppf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]
 size = Vector2(234, 216)
@@ -20,19 +21,19 @@ position = Vector2(-107, 164)
 [node name="Mugshot_Positions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(189, 247)
+position = Vector2(126, 411)
 
 [node name="Marker2D2" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(384, 247)
+position = Vector2(313, 417)
 
 [node name="Marker2D3" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(565, 247)
+position = Vector2(516, 411)
 
 [node name="Mugshots_Canvas" type="Node2D" parent="."]
 
 [node name="Jail" type="Node2D" parent="." groups=["Jail"]]
 z_index = -2
-position = Vector2(682, 528)
+position = Vector2(733, 709)
 
 [node name="Sprite2D" type="Sprite2D" parent="Jail"]
 rotation = -0.095044
@@ -45,3 +46,9 @@ texture = ExtResource("3_w44ye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jail/Area2D"]
 shape = SubResource("RectangleShape2D_g4yja")
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -10
+z_as_relative = false
+position = Vector2(435, 420)
+texture = ExtResource("5_p1ppf")
