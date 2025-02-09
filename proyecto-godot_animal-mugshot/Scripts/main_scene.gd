@@ -1,6 +1,6 @@
 extends Node2D
 
-const suspects_num : int = 3
+const suspects_num : int = 10
 const max_item : int = 1
 const max_atributes : int = 3
 var all_mugshots : Array = []
@@ -11,6 +11,7 @@ const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
 func _ready() -> void:
 	Update_Props()
+	Update_Folders()
 	Update_Mugshots()
 	$UI.Set_Timer()
 	pass
@@ -33,7 +34,18 @@ func Update_Props() -> void:
 			
 		Global.modified_items[i] = [body_part, wich_item, it_has]
 		print("target_items ", Global.modified_items[i])
-	
+
+func Update_Folders() -> void:
+	# $Floders.get_child( número de carpeta )
+	# Global.modified_items[x] 0 Front, 1 Back, 2 Xray
+	# Global.modified_items[x] Parte del cuerpo
+	$Folders.get_child(0).get_child(0).get_child(Global.modified_items[0][0]).get_child(Global.modified_items[0][1]).show()
+	# sello si/no
+	if Global.modified_items[0][2]:
+		$Folders.get_child(0).get_child(3).get_child(0).show()
+	else:
+		$Folders.get_child(0).get_child(3).get_child(1).show()
+		
 
 func Update_Mugshots() -> void:
 	

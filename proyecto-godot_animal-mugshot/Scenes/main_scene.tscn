@@ -17,22 +17,45 @@ size = Vector2(440, 312)
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_t7gi6")
 
-[node name="Folder" parent="." instance=ExtResource("2_pj16t")]
+[node name="Folders" type="Node2D" parent="."]
+
+[node name="Folder" parent="Folders" instance=ExtResource("2_pj16t")]
 position = Vector2(564, -228)
 
-[node name="Folder2" parent="." instance=ExtResource("3_adixa")]
+[node name="Folder2" parent="Folders" instance=ExtResource("3_adixa")]
 position = Vector2(-107, 164)
 
 [node name="Mugshot_Positions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(126, 411)
+position = Vector2(125, 136)
 
 [node name="Marker2D2" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(313, 417)
+position = Vector2(311, 158)
 
 [node name="Marker2D3" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(516, 411)
+position = Vector2(518, 135)
+
+[node name="Marker2D4" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(706, 143)
+
+[node name="Marker2D5" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(119, 401)
+
+[node name="Marker2D6" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(322, 401)
+
+[node name="Marker2D7" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(516, 410)
+
+[node name="Marker2D8" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(716, 403)
+
+[node name="Marker2D9" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(119, 660)
+
+[node name="Marker2D10" type="Marker2D" parent="Mugshot_Positions"]
+position = Vector2(309, 668)
 
 [node name="Mugshots_Canvas" type="Node2D" parent="."]
 

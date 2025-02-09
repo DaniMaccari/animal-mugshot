@@ -4,6 +4,7 @@ extends Node2D
 const prob_front_empty : int= 1
 const prob_back_empty : int = 2
 const prob_xray_empty : int = 4
+const original_z_index: int = -1
 
 var body_selected : int
 var my_position : Vector2
@@ -110,11 +111,13 @@ func Dress_Character():
 func _on_is_dragged_button_down() -> void:
 	dragging = true
 	of_set = get_global_mouse_position() - global_position
+	z_index = 10
 
 func _on_is_dragged_button_up() -> void:
 	if in_jail && is_target:
 		my_position =  get_parent().get_parent().get_node("Jail").position
 	dragging = false
+	z_index = original_z_index
 
 func _on_is_dragged_pressed() -> void:
 	if my_position == position:
