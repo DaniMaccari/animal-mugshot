@@ -23,6 +23,8 @@ func clean_folder() -> void:
 		$Objects_Xray/Body.get_child(i).hide()
 
 func _on_button_button_down() -> void:
+	$PaperTouch.play()
+	
 	get_viewport().set_input_as_handled()
 	dragging = true
 	of_set = get_global_mouse_position() - global_position

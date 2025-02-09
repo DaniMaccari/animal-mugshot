@@ -359,6 +359,8 @@ shape = SubResource("CircleShape2D_l0rbi")
 position = Vector2(-39, -66)
 emitting = false
 
+[node name="WrongSound" type="AudioStreamPlayer" parent="."]
+
 [connection signal="button_down" from="Is_Dragged" to="." method="_on_is_dragged_button_down"]
 [connection signal="button_up" from="Is_Dragged" to="." method="_on_is_dragged_button_up"]
 [connection signal="pressed" from="Is_Dragged" to="." method="_on_is_dragged_pressed"]

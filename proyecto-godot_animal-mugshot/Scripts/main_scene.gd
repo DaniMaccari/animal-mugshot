@@ -39,6 +39,8 @@ func New_Round() -> void:
 
 func Game_Over() -> void:
 	$Cortinas.Game_Over()
+	$Music_BG.stop()
+	$Music_Final.playing = true
 
 func Update_Props() -> void:
 	# volver a 0

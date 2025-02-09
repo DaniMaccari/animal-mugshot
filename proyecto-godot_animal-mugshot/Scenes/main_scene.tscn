@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=24 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
@@ -18,8 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://bgt3ue85ep1bf" path="res://Scenes/fire_particles.tscn" id="10_5jdef"]
 [ext_resource type="Script" path="res://Scripts/cortinas.gd" id="15_n0m8r"]
 [ext_resource type="Texture2D" uid="uid://bf1yprr0xcyxf" path="res://Assets/UI/cortina.png" id="16_3tebr"]
-[ext_resource type="Texture2D" uid="uid://ca15ew7xteg6n" path="res://Assets/test_assets/fin.png" id="18_ua64b"]
+[ext_resource type="Texture2D" uid="uid://b500wxhg1v27k" path="res://Assets/UI/gameOver (1).png" id="18_nya1x"]
 [ext_resource type="Texture2D" uid="uid://bbrqka3nkmeh5" path="res://Assets/test_assets/bien.png" id="19_86hsq"]
+[ext_resource type="AudioStream" uid="uid://745262xcjldq" path="res://Assets/music/BG music.mp3" id="21_na3mh"]
+[ext_resource type="AudioStream" uid="uid://c5apitvfinq5b" path="res://Assets/music/circo final.wav" id="22_n1eyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]
 size = Vector2(898.361, 726.066)
@@ -162,8 +164,9 @@ script = ExtResource("15_n0m8r")
 [node name="Fin" type="Sprite2D" parent="Cortinas"]
 visible = false
 z_index = 1
-position = Vector2(420, 300)
-texture = ExtResource("18_ua64b")
+position = Vector2(450, 376)
+scale = Vector2(0.711458, 0.711458)
+texture = ExtResource("18_nya1x")
 
 [node name="Good" type="Sprite2D" parent="Cortinas"]
 visible = false
@@ -186,6 +189,15 @@ position = Vector2(-240, 380)
 
 [node name="Marker2" type="Marker2D" parent="Cortinas"]
 position = Vector2(1111, 380)
+
+[node name="Music_BG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_na3mh")
+volume_db = -15.0
+autoplay = true
+
+[node name="Music_Final" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_n1eyq")
+volume_db = -15.0
 
 [connection signal="area_entered" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_exited"]

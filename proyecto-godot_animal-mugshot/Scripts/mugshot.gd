@@ -123,6 +123,8 @@ func _on_is_dragged_button_up() -> void:
 		my_position = get_parent().get_parent().get_node("Jail").position
 		get_parent().Entered_Jail()
 		print("target in jail")
+	elif in_jail:
+		$WrongSound.play()
 	dragging = false
 	z_index = original_z_index
 	$CPUParticles2D.emitting = false

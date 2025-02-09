@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ca0c3piu7tun5"]
+[gd_scene load_steps=32 format=3 uid="uid://ca0c3piu7tun5"]
 
 [ext_resource type="Texture2D" uid="uid://davnxia8l3h55" path="res://Assets/sheets/sheet_3.png" id="1_1ol4r"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_y8j7b"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_8sqv8"]
 [ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_824wn"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_ospxy"]
+[ext_resource type="AudioStream" uid="uid://buiicqt31osed" path="res://Assets/music/paper.wav" id="31_7arwj"]
 
 [node name="Folder" type="Sprite2D"]
 z_index = 5
@@ -240,6 +241,10 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0786914
 metadata/_edit_use_anchors_ = true
+
+[node name="PaperTouch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_7arwj")
+volume_db = -5.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
