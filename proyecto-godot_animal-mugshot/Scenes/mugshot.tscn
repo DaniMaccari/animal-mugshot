@@ -67,12 +67,10 @@ texture = ExtResource("7_j7lac")
 
 [node name="Tamy_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
-scale = Vector2(1, 1)
 texture = ExtResource("3_2aw8t")
 
 [node name="Topo_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
 visible = false
-scale = Vector2(1, 1)
 texture = ExtResource("9_33a77")
 
 [node name="ApplePie_Front" type="Sprite2D" parent="Body_Front/Character_Body"]
@@ -173,13 +171,11 @@ texture = ExtResource("21_2tb6k")
 [node name="Tamy_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
 position = Vector2(7.49998, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("8_7ptk1")
 
 [node name="Topo_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
 visible = false
 position = Vector2(-2.49999, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("23_vmglj")
 
 [node name="ApplePie_Front" type="Sprite2D" parent="Body_Back/Character_Body"]
@@ -251,12 +247,10 @@ texture = ExtResource("7_j7lac")
 
 [node name="Tamy_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
-scale = Vector2(1, 1)
 texture = ExtResource("3_2aw8t")
 
 [node name="Topo_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]
 visible = false
-scale = Vector2(1, 1)
 texture = ExtResource("9_33a77")
 
 [node name="ApplePie_Front" type="Sprite2D" parent="Body_Xray/Character_Body"]

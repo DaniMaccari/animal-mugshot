@@ -1,16 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=12 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
 [ext_resource type="PackedScene" uid="uid://c0utg7yi2jhkd" path="res://Scenes/sheet_objects/sheet_2.tscn" id="3_adixa"]
-[ext_resource type="Texture2D" uid="uid://cuj4ytdbumato" path="res://Assets/test_assets/jail.png" id="3_w44ye"]
+[ext_resource type="Texture2D" uid="uid://c3n1e3ike70h4" path="res://Assets/UI/cárcel.png" id="4_ehbhk"]
 [ext_resource type="Texture2D" uid="uid://ca33byjdbnkoc" path="res://Assets/sheets/fondo.png" id="5_p1ppf"]
+[ext_resource type="Texture2D" uid="uid://c183i4uvv27rx" path="res://Assets/UI/doors_open.png" id="5_yn1rw"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="6_x88f1"]
 [ext_resource type="Texture2D" uid="uid://ntohi6t5jgba" path="res://Assets/UI/lifebar_2.png" id="7_vbxj0"]
 [ext_resource type="Texture2D" uid="uid://dlcslv1sj6oov" path="res://Assets/UI/lifebar_1.png" id="8_pbhnt"]
+[ext_resource type="PackedScene" uid="uid://bgt3ue85ep1bf" path="res://Scenes/fire_particles.tscn" id="10_5jdef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]
-size = Vector2(234, 216)
+size = Vector2(440, 312)
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_t7gi6")
@@ -36,12 +38,16 @@ position = Vector2(516, 411)
 
 [node name="Jail" type="Node2D" parent="." groups=["Jail"]]
 z_index = -2
-position = Vector2(733, 709)
+position = Vector2(627, 672)
+rotation = -0.0805593
 
-[node name="Sprite2D" type="Sprite2D" parent="Jail"]
-rotation = -0.095044
-scale = Vector2(0.884952, 0.917092)
-texture = ExtResource("3_w44ye")
+[node name="Jail_Background" type="Sprite2D" parent="Jail"]
+scale = Vector2(0.569149, 0.569149)
+texture = ExtResource("4_ehbhk")
+
+[node name="Jail_Door_Open" type="Sprite2D" parent="Jail"]
+scale = Vector2(0.567376, 0.567376)
+texture = ExtResource("5_yn1rw")
 
 [node name="Jail_Marker" type="Marker2D" parent="Jail"]
 
@@ -56,19 +62,10 @@ z_as_relative = false
 position = Vector2(435, 420)
 texture = ExtResource("5_p1ppf")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 870.0
-offset_bottom = 830.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="UI" type="Node2D" parent="."]
 script = ExtResource("6_x88f1")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
-layout_mode = 0
 offset_left = 805.0
 offset_top = -11.0
 offset_right = 864.0
@@ -82,5 +79,8 @@ texture_progress = ExtResource("8_pbhnt")
 
 [node name="Timer" type="Timer" parent="UI"]
 wait_time = 0.3
+
+[node name="CPUParticles2D" parent="UI" instance=ExtResource("10_5jdef")]
+position = Vector2(951, 7)
 
 [connection signal="timeout" from="UI/Timer" to="UI" method="_on_timer_timeout"]
