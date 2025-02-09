@@ -1,17 +1,24 @@
 extends Node2D
 
+
+const prob_front_empty : int= 1
+const prob_back_empty : int = 2
+const prob_xray_empty : int = 4
+
+var body_selected : int
 var my_position : Vector2
 var of_set : Vector2 = Vector2( 0, 0)
 var dragging : bool = false
 
-var is_bad : bool = false
+var is_target : bool = false
 var in_jail : bool = false
 var front_side : bool = false
 
 
 func _ready() -> void:
+	$Body_Back.hide()
+	$Body_Xray.hide()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,28 +26,99 @@ func _process(delta: float) -> void:
 		position = lerp(position, get_global_mouse_position() - of_set, delta *15)
 	else:
 		position = my_position
-	
 
 func set_grid_position( grid_position : Vector2) -> void:
 	my_position = grid_position
+
+func set_target():
+	is_target = true
+
+func Dress_Character():
+	
+	# parte delantera
+	for i : int in range($Body_Front.get_child_count()):
+		var new_item = randi_range(-prob_front_empty, $Body_Front.get_child(i).get_child_count() -1)
+		if i == Global.BODY_INDEX:
+			if new_item < 0:
+				new_item = 0
+			body_selected = new_item
+			$Body_Front.get_child(i).get_child(new_item).show()
+		
+		elif new_item < 0:
+			pass
+		
+		else:
+			$Body_Front.get_child(i).get_child(new_item).show()
+	
+	# parte trasera
+	for i : int in range($Body_Back.get_child_count()):
+		var new_item = randi_range(-prob_back_empty, $Body_Back.get_child(i).get_child_count() -1)
+		if i == Global.BODY_INDEX:
+			$Body_Back.get_child(i).get_child(body_selected).show()
+		
+		elif new_item < 0:
+			pass
+		
+		else:
+			$Body_Back.get_child(i).get_child(new_item).show()
+	
+	# parte X-ray
+	for i : int in range($Body_Xray.get_child_count()):
+		var new_item = randi_range(-prob_xray_empty, $Body_Xray.get_child(i).get_child_count() -1)
+		if i == Global.BODY_INDEX:
+			$Body_Xray.get_child(i).get_child(body_selected).show()
+		
+		elif new_item < 0:
+			pass
+		
+		else:
+			$Body_Xray.get_child(i).get_child(new_item).show()
+
+	# edit target character
+	for i : int in range(Global.modified_items.size()): # [parte del cuerpo, item, si/no lo tiene]
+		if  i == 0: # Body_Front
+			if Global.modified_items[i][2] == true: # se tiene que enseñar
+				for j : int in range($Body_Front.get_child(Global.modified_items[i][0]).get_children_count()):
+					$Body_Front.get_child(Global.modified_items[i][0]).get_child(j).hide()
+				$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).show()
+			
+			else:
+				$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).hide()
+		
+		elif i == 1: # Body_Back
+			if Global.modified_items[i][2] == true:
+				for j : int in range($Body_Back.get_child(1).get_children_count()):
+					$Body_Back.get_child(1).get_child(j).hide()
+				$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).show()
+			else:
+				$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).hide()
+		
+		elif i == 2: # Body_Xray
+			if Global.modified_items[i][2] == true:
+				for j : int in range($Body_Xray.get_child(1).get_children_count()):
+					$Body_Xray.get_child(1).get_child(j).hide()
+				$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).show()
+			else:
+				$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).hide()
 
 func _on_is_dragged_button_down() -> void:
 	dragging = true
 	of_set = get_global_mouse_position() - global_position
 
 func _on_is_dragged_button_up() -> void:
-	if in_jail:
+	if in_jail && is_target:
 		my_position =  get_parent().get_parent().get_node("Jail").position
 	dragging = false
 
 func _on_is_dragged_pressed() -> void:
-	front_side = false
-
+	if my_position == position:
+		front_side = !front_side
+		$Body_Front.visible = !$Body_Front.visible
+		$Body_Back.visible = !$Body_Back.visible
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Jail"):
 		in_jail = true
 		print("Estoy en la carcer")
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	in_jail = false

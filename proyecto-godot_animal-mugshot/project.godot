@@ -14,6 +14,10 @@ config/name="proyecto-Godot_animal-mugshot"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/public_variables.gd"
+
 [debug]
 
 gdscript/warnings/inferred_declaration=2
