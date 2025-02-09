@@ -1,12 +1,237 @@
-[gd_scene load_steps=3 format=3 uid="uid://co12x8texasce"]
+[gd_scene load_steps=28 format=3 uid="uid://co12x8texasce"]
 
 [ext_resource type="Texture2D" uid="uid://pqldveh3ktyh" path="res://Assets/sheets/sheet_4.png" id="1_nljmk"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_yfw1v"]
+[ext_resource type="Texture2D" uid="uid://cjpjry25lma7v" path="res://Assets/accesories/head/head_cap_1.png" id="3_pa46o"]
+[ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="4_dgj31"]
+[ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="5_iifno"]
+[ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="6_bl25t"]
+[ext_resource type="Texture2D" uid="uid://dqmu4ygue3uae" path="res://Assets/accesories/head/head_flowers_2.png" id="7_vd76t"]
+[ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="8_bkat0"]
+[ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="9_o84b2"]
+[ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="10_sy3go"]
+[ext_resource type="Texture2D" uid="uid://dj6y63vg0rf7" path="res://Assets/accesories/head/head_hat_3.png" id="11_vsenk"]
+[ext_resource type="Texture2D" uid="uid://cstvqs7wxs63t" path="res://Assets/accesories/top/top_bow_1.png" id="12_kejww"]
+[ext_resource type="Texture2D" uid="uid://hy233jb4lbx7" path="res://Assets/accesories/top/top_bow_2.png" id="13_x5sxi"]
+[ext_resource type="Texture2D" uid="uid://i55u5182uysw" path="res://Assets/accesories/top/top_bow_3.png" id="14_hdwu1"]
+[ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="15_gdnjh"]
+[ext_resource type="Texture2D" uid="uid://faqorcq3exvu" path="res://Assets/accesories/top/top_lace_2.png" id="16_l2m0n"]
+[ext_resource type="Texture2D" uid="uid://skbpsv7keh4" path="res://Assets/accesories/top/top_lace_3.png" id="17_uc3su"]
+[ext_resource type="Texture2D" uid="uid://db78xvxholqdi" path="res://Assets/accesories/top/top_tie_1.png" id="18_momtd"]
+[ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="19_wo6p7"]
+[ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="20_0kv67"]
+[ext_resource type="Texture2D" uid="uid://bp56x613s1oa3" path="res://Assets/test_assets/prop_test_0.png" id="21_cqv7i"]
+[ext_resource type="Texture2D" uid="uid://ja6i5exa3vat" path="res://Assets/test_assets/prop_test_1.png" id="22_ies6s"]
+[ext_resource type="Texture2D" uid="uid://b0bytswewil18" path="res://Assets/test_assets/prop_test_2.png" id="23_jsf77"]
+[ext_resource type="Texture2D" uid="uid://vusbrwrrs7ps" path="res://Assets/test_assets/prop_test_3.png" id="24_jpoae"]
+[ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_ht368"]
+[ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_4kwb6"]
+[ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_5c7uf"]
 
 [node name="Folder" type="Sprite2D"]
 z_index = 5
 texture = ExtResource("1_nljmk")
 script = ExtResource("2_yfw1v")
+
+[node name="Objects_Front" type="Node2D" parent="."]
+position = Vector2(-58, 88)
+scale = Vector2(0.812647, 0.812647)
+
+[node name="Empty" type="Node" parent="Objects_Front"]
+
+[node name="Head" type="Node2D" parent="Objects_Front"]
+position = Vector2(-1, 171)
+scale = Vector2(1.15289, 1.15289)
+
+[node name="Head_0" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(1, -70)
+scale = Vector2(0.671053, 0.611111)
+texture = ExtResource("3_pa46o")
+
+[node name="Head_1" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(1, -59)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("4_dgj31")
+
+[node name="Head_2" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(0, -58)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("5_iifno")
+
+[node name="Head_3" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-26.5915, -87.1149)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("6_bl25t")
+
+[node name="Head_4" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-26.5915, -87.1149)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("7_vd76t")
+
+[node name="Head_5" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-26.5915, -87.1149)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("8_bkat0")
+
+[node name="Head_6" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-25.5242, -70.0372)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("9_o84b2")
+
+[node name="Head_7" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-25.5242, -70.0372)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("10_sy3go")
+
+[node name="Head_8" type="Sprite2D" parent="Objects_Front/Head"]
+visible = false
+position = Vector2(-25.5242, -70.0372)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("11_vsenk")
+
+[node name="Body" type="Node2D" parent="Objects_Front"]
+position = Vector2(-37, -27)
+scale = Vector2(0.646194, 0.646194)
+
+[node name="TopBow1" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("12_kejww")
+
+[node name="TopBow2" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("13_x5sxi")
+
+[node name="TopBow3" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("14_hdwu1")
+
+[node name="TopBow4" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("15_gdnjh")
+
+[node name="TopBow5" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("16_l2m0n")
+
+[node name="TopBow6" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("17_uc3su")
+
+[node name="TopBow7" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -73)
+texture = ExtResource("18_momtd")
+
+[node name="TopBow8" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("19_wo6p7")
+
+[node name="TopBow9" type="Sprite2D" parent="Objects_Front/Body"]
+visible = false
+position = Vector2(4, -38.4371)
+texture = ExtResource("20_0kv67")
+
+[node name="Objects_Back" type="Node2D" parent="."]
+
+[node name="Empty" type="Node" parent="Objects_Back"]
+
+[node name="Body" type="Node2D" parent="Objects_Back"]
+position = Vector2(1, -21)
+
+[node name="Head_4" type="Sprite2D" parent="Objects_Back/Body"]
+visible = false
+position = Vector2(2, -4)
+scale = Vector2(1.56414, 1.42442)
+texture = ExtResource("21_cqv7i")
+
+[node name="Head_1" type="Sprite2D" parent="Objects_Back/Body"]
+visible = false
+position = Vector2(-1.99999, -76)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("22_ies6s")
+
+[node name="Head_2" type="Sprite2D" parent="Objects_Back/Body"]
+visible = false
+position = Vector2(0, -77)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("23_jsf77")
+
+[node name="Head_3" type="Sprite2D" parent="Objects_Back/Body"]
+visible = false
+position = Vector2(-1, -78)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("24_jpoae")
+
+[node name="Objects_Xray" type="Node2D" parent="."]
+
+[node name="Empty" type="Node" parent="Objects_Xray"]
+
+[node name="Body" type="Node2D" parent="Objects_Xray"]
+position = Vector2(1, -21)
+
+[node name="Head_4" type="Sprite2D" parent="Objects_Xray/Body"]
+visible = false
+position = Vector2(2, -4)
+scale = Vector2(1.56414, 1.42442)
+texture = ExtResource("21_cqv7i")
+
+[node name="Head_1" type="Sprite2D" parent="Objects_Xray/Body"]
+visible = false
+position = Vector2(-1.99999, -76)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("22_ies6s")
+
+[node name="Head_2" type="Sprite2D" parent="Objects_Xray/Body"]
+visible = false
+position = Vector2(0, -77)
+scale = Vector2(0.736842, 0.688889)
+texture = ExtResource("23_jsf77")
+
+[node name="Head_3" type="Sprite2D" parent="Objects_Xray/Body"]
+visible = false
+position = Vector2(-1, -78)
+scale = Vector2(0.710526, 0.633333)
+texture = ExtResource("24_jpoae")
+
+[node name="Objects_yes_no" type="Node2D" parent="."]
+position = Vector2(-12, -42)
+rotation = 0.0974166
+scale = Vector2(0.44013, 0.44013)
+
+[node name="yes" type="Sprite2D" parent="Objects_yes_no"]
+visible = false
+position = Vector2(0.666666, -21.3333)
+scale = Vector2(0.671053, 0.611111)
+texture = ExtResource("25_ht368")
+
+[node name="no" type="Sprite2D" parent="Objects_yes_no"]
+visible = false
+position = Vector2(0.949609, -25.1646)
+scale = Vector2(0.644737, 0.688889)
+texture = ExtResource("26_4kwb6")
+
+[node name="Add" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(-58, 1.99998)
+rotation = -2.72457
+scale = Vector2(0.195254, 0.195254)
+texture = ExtResource("27_5c7uf")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

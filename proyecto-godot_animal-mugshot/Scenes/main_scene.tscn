@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=14 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
 [ext_resource type="PackedScene" uid="uid://c0utg7yi2jhkd" path="res://Scenes/sheet_objects/sheet_2.tscn" id="3_adixa"]
+[ext_resource type="PackedScene" uid="uid://ca0c3piu7tun5" path="res://Scenes/sheet_objects/sheet_3.tscn" id="4_1ibuc"]
 [ext_resource type="Texture2D" uid="uid://c3n1e3ike70h4" path="res://Assets/UI/cárcel.png" id="4_ehbhk"]
+[ext_resource type="PackedScene" uid="uid://co12x8texasce" path="res://Scenes/sheet_objects/sheet_4.tscn" id="5_24iv2"]
 [ext_resource type="Texture2D" uid="uid://ca33byjdbnkoc" path="res://Assets/sheets/fondo.png" id="5_p1ppf"]
 [ext_resource type="Texture2D" uid="uid://c183i4uvv27rx" path="res://Assets/UI/doors_open.png" id="5_yn1rw"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="6_x88f1"]
@@ -17,13 +19,11 @@ size = Vector2(440, 312)
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_t7gi6")
 
-[node name="Folders" type="Node2D" parent="."]
-
-[node name="Folder" parent="Folders" instance=ExtResource("2_pj16t")]
-position = Vector2(564, -228)
-
-[node name="Folder2" parent="Folders" instance=ExtResource("3_adixa")]
-position = Vector2(-107, 164)
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -10
+z_as_relative = false
+position = Vector2(435, 420)
+texture = ExtResource("5_p1ppf")
 
 [node name="Mugshot_Positions" type="Node2D" parent="."]
 
@@ -79,11 +79,20 @@ texture = ExtResource("5_yn1rw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jail/Area2D"]
 shape = SubResource("RectangleShape2D_g4yja")
 
-[node name="BG" type="Sprite2D" parent="."]
-z_index = -10
-z_as_relative = false
-position = Vector2(435, 420)
-texture = ExtResource("5_p1ppf")
+[node name="Folders" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Folder" parent="Folders" instance=ExtResource("2_pj16t")]
+position = Vector2(564, -228)
+
+[node name="Folder2" parent="Folders" instance=ExtResource("3_adixa")]
+position = Vector2(-107, 164)
+
+[node name="Folder3" parent="Folders" instance=ExtResource("4_1ibuc")]
+position = Vector2(-117, 817)
+
+[node name="Folder4" parent="Folders" instance=ExtResource("5_24iv2")]
+position = Vector2(-85, 458)
 
 [node name="UI" type="Node2D" parent="."]
 script = ExtResource("6_x88f1")
@@ -94,8 +103,8 @@ offset_top = -11.0
 offset_right = 864.0
 offset_bottom = 789.0
 scale = Vector2(1.05, 1.05)
-max_value = 180.0
-value = 180.0
+max_value = 240.0
+value = 240.0
 fill_mode = 3
 texture_under = ExtResource("7_vbxj0")
 texture_progress = ExtResource("8_pbhnt")

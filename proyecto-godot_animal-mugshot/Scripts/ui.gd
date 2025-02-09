@@ -1,6 +1,6 @@
 extends Node2D
 
-var max_timer_value : int= 180
+@export var max_timer_value : int= 240
 var timer_value : int = 0
 const left_space : int = 32
 

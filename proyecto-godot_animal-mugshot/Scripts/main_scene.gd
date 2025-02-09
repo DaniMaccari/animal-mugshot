@@ -37,14 +37,23 @@ func Update_Props() -> void:
 
 func Update_Folders() -> void:
 	# $Floders.get_child( número de carpeta )
-	# Global.modified_items[x] 0 Front, 1 Back, 2 Xray
-	# Global.modified_items[x] Parte del cuerpo
-	$Folders.get_child(0).get_child(0).get_child(Global.modified_items[0][0]).get_child(Global.modified_items[0][1]).show()
-	# sello si/no
-	if Global.modified_items[0][2]:
-		$Folders.get_child(0).get_child(3).get_child(0).show()
-	else:
-		$Folders.get_child(0).get_child(3).get_child(1).show()
+	var empty_folder : int = randi_range(0, 3)
+	var item_counter : int = 0
+	
+	for folder_num : int in range($Folders.get_child_count()):
+		if folder_num == empty_folder:
+			$Folders.get_child(folder_num).get_child(4).show()
+		else:
+			# Global.modified_items[x] 0 Front, 1 Back, 2 Xray
+			# Global.modified_items[x] Parte del cuerpo
+			$Folders.get_child(folder_num).get_child(item_counter).get_child(Global.modified_items[item_counter][0]).get_child(Global.modified_items[item_counter][1]).show()
+			# sello si/no
+			if Global.modified_items[item_counter][2]:
+				$Folders.get_child(item_counter).get_child(3).get_child(0).show()
+			else:
+				$Folders.get_child(item_counter).get_child(3).get_child(1).show()
+			
+			item_counter += 1
 		
 
 func Update_Mugshots() -> void:
