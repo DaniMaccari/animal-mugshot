@@ -15,6 +15,7 @@ func _on_timer_timeout() -> void:
 	$TextureProgressBar.value = timer_value
 	
 	if timer_value <= 0:
+		$Timer.stop()
 		$CPUParticles2D.emitting = false
 		emit_signal("time_ended")
 

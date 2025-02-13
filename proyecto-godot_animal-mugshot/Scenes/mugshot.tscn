@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cx52usm28awl2"]
+[gd_scene load_steps=47 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
 [ext_resource type="Texture2D" uid="uid://b0i2jc5f6dkf7" path="res://Assets/animals/front/setonio_front.png" id="2_fodys"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="29_aexqn"]
 [ext_resource type="Texture2D" uid="uid://cxevrk7bg33h2" path="res://Assets/accesories/back/back_cigar_1.png" id="40_3aufo"]
 [ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="43_uollv"]
+[ext_resource type="AudioStream" uid="uid://cb6m6jmd156ii" path="res://Assets/music/no1.mp3" id="45_on2dt"]
 [ext_resource type="PackedScene" uid="uid://euou8n2xf58b" path="res://Scenes/swet_particles.tscn" id="45_ystt2"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="47_572b6"]
 
@@ -360,6 +361,9 @@ position = Vector2(-39, -66)
 emitting = false
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_on2dt")
+volume_db = -8.0
+pitch_scale = 1.8
 
 [connection signal="button_down" from="Is_Dragged" to="." method="_on_is_dragged_button_down"]
 [connection signal="button_up" from="Is_Dragged" to="." method="_on_is_dragged_button_up"]

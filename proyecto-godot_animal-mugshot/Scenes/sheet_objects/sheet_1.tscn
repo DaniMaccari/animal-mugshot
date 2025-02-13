@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://jlb0trok83do"]
+[gd_scene load_steps=33 format=3 uid="uid://jlb0trok83do"]
 
 [ext_resource type="Texture2D" uid="uid://buv6w31a122e3" path="res://Assets/sheets/sheet_1.png" id="1_p34op"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_2odfs"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_kjrea"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_mqone"]
 [ext_resource type="AudioStream" uid="uid://buiicqt31osed" path="res://Assets/music/paper.wav" id="31_fck33"]
+[ext_resource type="Texture2D" uid="uid://6q7c872a3rm3" path="res://Assets/sheets/sheet_1_shadow.png" id="32_l1gta"]
 
 [node name="Folder" type="Sprite2D"]
 z_index = 5
@@ -246,6 +247,12 @@ metadata/_edit_use_anchors_ = true
 [node name="PaperTouch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_fck33")
 volume_db = -5.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+texture = ExtResource("32_l1gta")
+offset = Vector2(0, 6)
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

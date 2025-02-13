@@ -32,47 +32,47 @@ script = ExtResource("1_t7gi6")
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -10
 z_as_relative = false
-position = Vector2(435, 420)
+position = Vector2(445, 417)
 texture = ExtResource("5_p1ppf")
 
 [node name="Mugshot_Positions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(125, 136)
+position = Vector2(142, 136)
 
 [node name="Marker2D2" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(311, 158)
+position = Vector2(328, 158)
 
 [node name="Marker2D3" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(518, 135)
+position = Vector2(535, 135)
 
 [node name="Marker2D4" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(706, 143)
+position = Vector2(723, 143)
 
 [node name="Marker2D5" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(119, 401)
+position = Vector2(136, 401)
 
 [node name="Marker2D6" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(322, 401)
+position = Vector2(339, 401)
 
 [node name="Marker2D7" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(516, 410)
+position = Vector2(533, 410)
 
 [node name="Marker2D8" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(716, 403)
+position = Vector2(733, 403)
 
 [node name="Marker2D9" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(119, 660)
+position = Vector2(136, 660)
 
 [node name="Marker2D10" type="Marker2D" parent="Mugshot_Positions"]
-position = Vector2(309, 668)
+position = Vector2(326, 668)
 
 [node name="Mugshots_Canvas" type="Node2D" parent="."]
 script = ExtResource("3_170mx")
 
 [node name="Jail" type="Node2D" parent="." groups=["Jail"]]
 z_index = -2
-position = Vector2(619, 654)
+position = Vector2(637, 654)
 scale = Vector2(0.61, 0.61)
 script = ExtResource("4_ec4uu")
 
@@ -103,7 +103,7 @@ position = Vector2(11.8827, 0)
 [node name="Area2D" type="Area2D" parent="Jail" groups=["Jail"]]
 position = Vector2(11.8827, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jail/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jail/Area2D" groups=["Jail"]]
 position = Vector2(140.576, 173.033)
 shape = SubResource("RectangleShape2D_g4yja")
 
@@ -137,6 +137,7 @@ position = Vector2(-117, 817)
 position = Vector2(-85, 458)
 
 [node name="UI" type="Node2D" parent="."]
+position = Vector2(18, 0)
 script = ExtResource("6_x88f1")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
@@ -175,25 +176,26 @@ position = Vector2(420, 400)
 texture = ExtResource("19_86hsq")
 
 [node name="Cortina" type="Sprite2D" parent="Cortinas"]
-position = Vector2(-240, 380)
-scale = Vector2(1.2, 1.1)
+position = Vector2(-255, 409)
+scale = Vector2(1.25, 1.05)
 texture = ExtResource("16_3tebr")
 
 [node name="Cortina2" type="Sprite2D" parent="Cortinas"]
-position = Vector2(1111, 380)
-scale = Vector2(-1.2, 1.1)
+position = Vector2(1144, 409)
+scale = Vector2(-1.25, 1.05)
 texture = ExtResource("16_3tebr")
 
 [node name="Marker" type="Marker2D" parent="Cortinas"]
-position = Vector2(-240, 380)
+position = Vector2(-255, 380)
 
 [node name="Marker2" type="Marker2D" parent="Cortinas"]
-position = Vector2(1111, 380)
+position = Vector2(1144, 380)
 
 [node name="Music_BG" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_na3mh")
 volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="Music_Final" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_n1eyq")

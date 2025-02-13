@@ -13,6 +13,7 @@ var dragging : bool = false
 
 var is_target : bool = false
 var in_jail : bool = false
+var droped_in_jail : bool = false
 var front_side : bool = false
 
 
@@ -24,8 +25,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if dragging:
-		position = lerp(position, get_global_mouse_position() - of_set, delta *15)
-	else:	
+		position = lerp(position, get_global_mouse_position() - of_set, delta *18)
+	else:
+		if is_target and in_jail:
+			self.get_parent().Entered_Jail()
 		if position.is_equal_approx(my_position):
 			position = my_position
 		else:
@@ -83,12 +86,12 @@ func Dress_Character():
 	if is_target:
 		for i : int in range(Global.modified_items.size()): # [parte del cuerpo, item, si/no lo tiene]
 			if  i == 0: # Body_Front
-				print("item, ", Global.modified_items[i])
+				
 				if Global.modified_items[i][2] == true: # se tiene que enseñar
-					print("PONER GORRO ", Global.modified_items[i][1])
+					
 					for j : int in range($Body_Front.get_child(Global.modified_items[i][0]).get_child_count()):
 						$Body_Front.get_child(Global.modified_items[i][0]).get_child(j).hide()
-						print("body part, ", $Body_Front.get_child(Global.modified_items[i][0]).get_child(j))
+						
 					$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).show()
 				
 				else:
@@ -98,8 +101,7 @@ func Dress_Character():
 				if Global.modified_items[i][2] == true:
 					for j : int in range($Body_Back.get_child(1).get_child_count()):
 						$Body_Back.get_child(1).get_child(j).hide()
-						print("body back", $Body_Back.get_child(1).get_child(j))
-					print($Body_Back.get_child(1).get_child(Global.modified_items[i][1]))
+					
 					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).show()
 				else:
 					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).hide()
@@ -121,7 +123,7 @@ func _on_is_dragged_button_down() -> void:
 func _on_is_dragged_button_up() -> void:
 	if is_target and in_jail:
 		my_position = get_parent().get_parent().get_node("Jail").position
-		get_parent().Entered_Jail()
+		droped_in_jail = true
 		print("target in jail")
 	elif in_jail:
 		$WrongSound.play()
@@ -140,7 +142,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		in_jail = true
 		if is_target:
 			my_position = get_parent().get_parent().get_node("Jail").position
-		print("Estoy en la carcer")
+		print("Estoy en la carcer, soy ", is_target)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	in_jail = false
+	if area.is_in_group("Jail"):
+		print("Salí de la carcel")
+		in_jail = false

@@ -38,9 +38,12 @@ func New_Round() -> void:
 		$Cortinas.Open_Curtains()
 
 func Game_Over() -> void:
-	$Cortinas.Game_Over()
-	$Music_BG.stop()
-	$Music_Final.playing = true
+	if Global.is_playing:
+		Global.is_playing = false
+		print("Game Over")
+		$Cortinas.Game_Over()
+		#$Music_BG.stop()
+		$Music_BG.pitch_scale = 0.8
 
 func Update_Props() -> void:
 	# volver a 0
@@ -91,7 +94,7 @@ func Update_Mugshots() -> void:
 	
 	# new characters
 	num_target = randi_range(0, suspects_num -1)
-	print("target1 ", num_target)
+	print("TARGET IS ", num_target)
 	
 	for i : int in range(suspects_num):
 		
@@ -102,7 +105,6 @@ func Update_Mugshots() -> void:
 		var new_character = MUGSHOT_SCENE.instantiate()
 		if i == num_target:
 			new_character.set_target()
-			print("target2 ", num_target)
 			
 		new_character.Dress_Character()
 		#Dress_Character(new_mugshot)
