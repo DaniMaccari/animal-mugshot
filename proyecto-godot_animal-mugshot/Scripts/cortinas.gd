@@ -13,6 +13,9 @@ func Close_Curtains() -> void:
 
 func Open_Curtains() -> void:
 	
+	if Global.is_playing == false:
+		return
+	
 	var tween : Tween = create_tween()
 	var center_x = get_viewport_rect().size.x / 2  # Centro de la pantalla
 
@@ -24,4 +27,3 @@ func Open_Curtains() -> void:
 	
 func Game_Over() -> void:
 	Close_Curtains()
-	$Fin.show()

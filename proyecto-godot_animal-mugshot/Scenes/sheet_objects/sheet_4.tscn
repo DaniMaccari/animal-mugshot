@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://co12x8texasce"]
+[gd_scene load_steps=31 format=3 uid="uid://co12x8texasce"]
 
 [ext_resource type="Texture2D" uid="uid://pqldveh3ktyh" path="res://Assets/sheets/sheet_4.png" id="1_nljmk"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_yfw1v"]
@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="4_dgj31"]
 [ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="5_iifno"]
 [ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="6_bl25t"]
-[ext_resource type="Texture2D" uid="uid://dqmu4ygue3uae" path="res://Assets/accesories/head/head_flowers_2.png" id="7_vd76t"]
 [ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="8_bkat0"]
 [ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="9_o84b2"]
 [ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="10_sy3go"]
 [ext_resource type="Texture2D" uid="uid://dj6y63vg0rf7" path="res://Assets/accesories/head/head_hat_3.png" id="11_vsenk"]
-[ext_resource type="Texture2D" uid="uid://cstvqs7wxs63t" path="res://Assets/accesories/top/top_bow_1.png" id="12_kejww"]
 [ext_resource type="Texture2D" uid="uid://hy233jb4lbx7" path="res://Assets/accesories/top/top_bow_2.png" id="13_x5sxi"]
 [ext_resource type="Texture2D" uid="uid://i55u5182uysw" path="res://Assets/accesories/top/top_bow_3.png" id="14_hdwu1"]
 [ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="15_gdnjh"]
@@ -28,8 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="24_tegcg"]
 [ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_ht368"]
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_4kwb6"]
-[ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_5c7uf"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_4gcse"]
+[ext_resource type="Texture2D" uid="uid://bkjdxk381p3t6" path="res://Assets/advertisement/holddoor.png" id="30_t4uql"]
 [ext_resource type="AudioStream" uid="uid://buiicqt31osed" path="res://Assets/music/paper.wav" id="31_ye7gk"]
 [ext_resource type="Texture2D" uid="uid://blif5yoq54ljr" path="res://Assets/sheets/sheet_4_shadow.png" id="32_wp7yy"]
 
@@ -72,12 +70,6 @@ position = Vector2(-26.5915, -87.1149)
 scale = Vector2(0.710526, 0.633333)
 texture = ExtResource("6_bl25t")
 
-[node name="Head_4" type="Sprite2D" parent="Objects_Front/Head"]
-visible = false
-position = Vector2(-26.5915, -87.1149)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("7_vd76t")
-
 [node name="Head_5" type="Sprite2D" parent="Objects_Front/Head"]
 visible = false
 position = Vector2(-26.5915, -87.1149)
@@ -105,11 +97,6 @@ texture = ExtResource("11_vsenk")
 [node name="Body" type="Node2D" parent="Objects_Front"]
 position = Vector2(-37, -27)
 scale = Vector2(0.646194, 0.646194)
-
-[node name="TopBow1" type="Sprite2D" parent="Objects_Front/Body"]
-visible = false
-position = Vector2(4, -38.4371)
-texture = ExtResource("12_kejww")
 
 [node name="TopBow2" type="Sprite2D" parent="Objects_Front/Body"]
 visible = false
@@ -222,11 +209,10 @@ texture = ExtResource("26_4kwb6")
 
 [node name="Add" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(-58, 1.99998)
-rotation = -2.72457
-scale = Vector2(0.195254, 0.195254)
-texture = ExtResource("27_5c7uf")
+position = Vector2(-66, 36)
+rotation = -0.0386022
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("30_t4uql")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

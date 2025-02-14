@@ -14,13 +14,22 @@ func _ready() -> void:
 	
 	$Mugshots_Canvas.entered_jail.connect(New_Round)
 	$UI.time_ended.connect(Game_Over)
+	pass
+
+func New_Game() -> void:
 	
+	Global.is_playing = true
+	$Game_Menu.hide()
+	$Game_Menu/StartGameButton.disabled = true
+	$Cortinas.show()
 	Update_Props()
 	Update_Folders()
 	Update_Mugshots()
 	$UI.Set_Timer()
-	pass
-
+	$Cortinas.Open_Curtains()
+	$Music_BG.pitch_scale = 1.0
+	
+	
 func New_Round() -> void:
 	if Global.reseting_level == false:
 		Global.reseting_level = true
@@ -41,6 +50,9 @@ func Game_Over() -> void:
 	if Global.is_playing:
 		Global.is_playing = false
 		print("Game Over")
+		$Game_Menu.show()
+		$Game_Menu/Fin.show()
+		$Game_Menu/StartGameButton.disabled = false
 		$Cortinas.Game_Over()
 		#$Music_BG.stop()
 		$Music_BG.pitch_scale = 0.8
@@ -77,9 +89,9 @@ func Update_Folders() -> void:
 			$Folders.get_child(folder_num).get_child(item_counter).get_child(Global.modified_items[item_counter][0]).get_child(Global.modified_items[item_counter][1]).show()
 			# sello si/no
 			if Global.modified_items[item_counter][2]:
-				$Folders.get_child(item_counter).get_child(3).get_child(0).show()
+				$Folders.get_child(folder_num).get_child(3).get_child(0).show()
 			else:
-				$Folders.get_child(item_counter).get_child(3).get_child(1).show()
+				$Folders.get_child(folder_num).get_child(3).get_child(1).show()
 			
 			item_counter += 1
 		
@@ -127,3 +139,8 @@ func Dress_Character(character : PackedScene) -> void:
 func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("ui_down"): #DEBUG
 		Update_Props()
+
+
+func _on_start_game_button_pressed() -> void:
+	New_Game()
+	pass # Replace with function body.

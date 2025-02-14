@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ca0c3piu7tun5"]
+[gd_scene load_steps=31 format=3 uid="uid://ca0c3piu7tun5"]
 
 [ext_resource type="Texture2D" uid="uid://davnxia8l3h55" path="res://Assets/sheets/sheet_3.png" id="1_1ol4r"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_y8j7b"]
@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="4_nst84"]
 [ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="5_fqno1"]
 [ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="6_il2le"]
-[ext_resource type="Texture2D" uid="uid://dqmu4ygue3uae" path="res://Assets/accesories/head/head_flowers_2.png" id="7_vdf7f"]
 [ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="8_ti0j5"]
 [ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="9_gp1ln"]
 [ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="10_kogh1"]
 [ext_resource type="Texture2D" uid="uid://dj6y63vg0rf7" path="res://Assets/accesories/head/head_hat_3.png" id="11_cocg2"]
-[ext_resource type="Texture2D" uid="uid://cstvqs7wxs63t" path="res://Assets/accesories/top/top_bow_1.png" id="12_xgk7m"]
 [ext_resource type="Texture2D" uid="uid://hy233jb4lbx7" path="res://Assets/accesories/top/top_bow_2.png" id="13_uokbm"]
 [ext_resource type="Texture2D" uid="uid://i55u5182uysw" path="res://Assets/accesories/top/top_bow_3.png" id="14_hbd5u"]
 [ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="15_ridh8"]
@@ -28,8 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="24_vwnf8"]
 [ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_osq0o"]
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_8sqv8"]
-[ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_824wn"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_ospxy"]
+[ext_resource type="Texture2D" uid="uid://ytqywe43dkm3" path="res://Assets/advertisement/add-1.png" id="30_6nhjt"]
 [ext_resource type="AudioStream" uid="uid://buiicqt31osed" path="res://Assets/music/paper.wav" id="31_7arwj"]
 [ext_resource type="Texture2D" uid="uid://dpxsvgungiy7w" path="res://Assets/sheets/sheet_3_shadow.png" id="32_w0eob"]
 
@@ -71,12 +69,6 @@ position = Vector2(-1, -54)
 scale = Vector2(0.710526, 0.633333)
 texture = ExtResource("6_il2le")
 
-[node name="Head_4" type="Sprite2D" parent="Objects_Front/Head"]
-visible = false
-position = Vector2(-1, -54)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("7_vdf7f")
-
 [node name="Head_5" type="Sprite2D" parent="Objects_Front/Head"]
 visible = false
 position = Vector2(-1, -54)
@@ -104,11 +96,6 @@ texture = ExtResource("11_cocg2")
 [node name="Body" type="Node2D" parent="Objects_Front"]
 position = Vector2(-105, 56)
 scale = Vector2(0.646194, 0.646194)
-
-[node name="TopBow1" type="Sprite2D" parent="Objects_Front/Body"]
-visible = false
-position = Vector2(4, -38.4371)
-texture = ExtResource("12_xgk7m")
 
 [node name="TopBow2" type="Sprite2D" parent="Objects_Front/Body"]
 visible = false
@@ -221,11 +208,10 @@ texture = ExtResource("26_8sqv8")
 
 [node name="Add" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(-130, -1)
-rotation = -0.539253
-scale = Vector2(0.261847, 0.261847)
-texture = ExtResource("27_824wn")
+position = Vector2(-127, 21)
+rotation = -0.0712132
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("30_6nhjt")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

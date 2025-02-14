@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c0utg7yi2jhkd"]
+[gd_scene load_steps=31 format=3 uid="uid://c0utg7yi2jhkd"]
 
 [ext_resource type="Texture2D" uid="uid://48420use7xap" path="res://Assets/sheets/sheet_2.png" id="1_g11yb"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_eevxv"]
@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="4_6cdbn"]
 [ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="5_tuplb"]
 [ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="6_mqyyx"]
-[ext_resource type="Texture2D" uid="uid://dqmu4ygue3uae" path="res://Assets/accesories/head/head_flowers_2.png" id="7_ax4gp"]
 [ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="8_1h17y"]
 [ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="9_fc3qt"]
 [ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="10_62cdp"]
 [ext_resource type="Texture2D" uid="uid://dj6y63vg0rf7" path="res://Assets/accesories/head/head_hat_3.png" id="11_rwq07"]
-[ext_resource type="Texture2D" uid="uid://cstvqs7wxs63t" path="res://Assets/accesories/top/top_bow_1.png" id="12_k8j2l"]
 [ext_resource type="Texture2D" uid="uid://hy233jb4lbx7" path="res://Assets/accesories/top/top_bow_2.png" id="13_lyjkp"]
 [ext_resource type="Texture2D" uid="uid://i55u5182uysw" path="res://Assets/accesories/top/top_bow_3.png" id="14_svc8l"]
 [ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="15_rwbwl"]
@@ -28,8 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://vusbrwrrs7ps" path="res://Assets/test_assets/prop_test_3.png" id="24_syr1o"]
 [ext_resource type="Texture2D" uid="uid://duqotie8ue50q" path="res://Assets/UI/subject_does_have.png" id="25_tnvd1"]
 [ext_resource type="Texture2D" uid="uid://b6gwshicxmrb8" path="res://Assets/UI/subject_does_NOT.png" id="26_xwxr8"]
-[ext_resource type="Texture2D" uid="uid://c6d0wtqwvq0kk" path="res://Assets/test_assets/kebab.png" id="27_6ogkl"]
 [ext_resource type="Texture2D" uid="uid://k7go3m88c6w0" path="res://Assets/accesories/back/back_key_2.png" id="28_aomnx"]
+[ext_resource type="Texture2D" uid="uid://b6mpsqi0tcnqc" path="res://Assets/advertisement/hourse_police.jpg" id="30_jjv6y"]
 [ext_resource type="AudioStream" uid="uid://buiicqt31osed" path="res://Assets/music/paper.wav" id="31_ti7dj"]
 [ext_resource type="Texture2D" uid="uid://dblbqimp2su21" path="res://Assets/sheets/sheet_2_shadow.png" id="32_fs5y4"]
 
@@ -71,12 +69,6 @@ position = Vector2(-1, -54)
 scale = Vector2(0.710526, 0.633333)
 texture = ExtResource("6_mqyyx")
 
-[node name="Head_4" type="Sprite2D" parent="Objects_Front/Head"]
-visible = false
-position = Vector2(-1, -54)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("7_ax4gp")
-
 [node name="Head_5" type="Sprite2D" parent="Objects_Front/Head"]
 visible = false
 position = Vector2(-1, -54)
@@ -104,11 +96,6 @@ texture = ExtResource("11_rwq07")
 [node name="Body" type="Node2D" parent="Objects_Front"]
 position = Vector2(1, -32)
 scale = Vector2(0.646194, 0.646194)
-
-[node name="TopBow1" type="Sprite2D" parent="Objects_Front/Body"]
-visible = false
-position = Vector2(4, -38.4371)
-texture = ExtResource("12_k8j2l")
 
 [node name="TopBow2" type="Sprite2D" parent="Objects_Front/Body"]
 visible = false
@@ -221,11 +208,10 @@ texture = ExtResource("26_xwxr8")
 
 [node name="Add" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(-24, -1.99998)
+position = Vector2(-33, -4)
 rotation = 0.0565402
-scale = Vector2(0.208751, 0.208751)
-texture = ExtResource("27_6ogkl")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("30_jjv6y")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

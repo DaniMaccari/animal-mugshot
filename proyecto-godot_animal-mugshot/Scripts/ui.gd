@@ -9,6 +9,7 @@ const left_space : int = 32
 func Set_Timer() -> void:
 	timer_value = max_timer_value
 	$Timer.start()
+	$CPUParticles2D.emitting = true
 
 func _on_timer_timeout() -> void:
 	timer_value -= 1

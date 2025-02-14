@@ -132,7 +132,7 @@ func _on_is_dragged_button_up() -> void:
 	$CPUParticles2D.emitting = false
 
 func _on_is_dragged_pressed() -> void:
-	if my_position == position:
+	if my_position.is_equal_approx(position):
 		front_side = !front_side
 		$Body_Front.visible = !$Body_Front.visible
 		$Body_Back.visible = !$Body_Back.visible
