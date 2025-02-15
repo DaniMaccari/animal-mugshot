@@ -1,22 +1,18 @@
-[gd_scene load_steps=31 format=3 uid="uid://ca0c3piu7tun5"]
+[gd_scene load_steps=27 format=3 uid="uid://ca0c3piu7tun5"]
 
 [ext_resource type="Texture2D" uid="uid://davnxia8l3h55" path="res://Assets/sheets/sheet_3.png" id="1_1ol4r"]
 [ext_resource type="Script" path="res://Scripts/folder.gd" id="2_y8j7b"]
-[ext_resource type="Texture2D" uid="uid://cjpjry25lma7v" path="res://Assets/accesories/head/head_cap_1.png" id="3_gpjd0"]
 [ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="4_nst84"]
 [ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="5_fqno1"]
 [ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="6_il2le"]
 [ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="8_ti0j5"]
-[ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="9_gp1ln"]
 [ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="10_kogh1"]
 [ext_resource type="Texture2D" uid="uid://dj6y63vg0rf7" path="res://Assets/accesories/head/head_hat_3.png" id="11_cocg2"]
 [ext_resource type="Texture2D" uid="uid://hy233jb4lbx7" path="res://Assets/accesories/top/top_bow_2.png" id="13_uokbm"]
 [ext_resource type="Texture2D" uid="uid://i55u5182uysw" path="res://Assets/accesories/top/top_bow_3.png" id="14_hbd5u"]
 [ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="15_ridh8"]
 [ext_resource type="Texture2D" uid="uid://faqorcq3exvu" path="res://Assets/accesories/top/top_lace_2.png" id="16_104j8"]
-[ext_resource type="Texture2D" uid="uid://skbpsv7keh4" path="res://Assets/accesories/top/top_lace_3.png" id="17_bt6i6"]
 [ext_resource type="Texture2D" uid="uid://db78xvxholqdi" path="res://Assets/accesories/top/top_tie_1.png" id="18_jc0e1"]
-[ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="19_sishn"]
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="20_y6pcj"]
 [ext_resource type="Texture2D" uid="uid://bp56x613s1oa3" path="res://Assets/test_assets/prop_test_0.png" id="21_5l1yh"]
 [ext_resource type="Texture2D" uid="uid://cxevrk7bg33h2" path="res://Assets/accesories/back/back_cigar_1.png" id="21_vt2i0"]
@@ -45,12 +41,6 @@ script = ExtResource("2_y8j7b")
 position = Vector2(-103, 237)
 scale = Vector2(1.15289, 1.15289)
 
-[node name="Head_0" type="Sprite2D" parent="Objects_Front/Head"]
-visible = false
-position = Vector2(1, -70)
-scale = Vector2(0.671053, 0.611111)
-texture = ExtResource("3_gpjd0")
-
 [node name="Head_1" type="Sprite2D" parent="Objects_Front/Head"]
 visible = false
 position = Vector2(1, -59)
@@ -74,12 +64,6 @@ visible = false
 position = Vector2(-1, -54)
 scale = Vector2(0.710526, 0.633333)
 texture = ExtResource("8_ti0j5")
-
-[node name="Head_6" type="Sprite2D" parent="Objects_Front/Head"]
-visible = false
-position = Vector2(-1, -54)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("9_gp1ln")
 
 [node name="Head_7" type="Sprite2D" parent="Objects_Front/Head"]
 visible = false
@@ -117,20 +101,10 @@ visible = false
 position = Vector2(4, -38.4371)
 texture = ExtResource("16_104j8")
 
-[node name="TopBow6" type="Sprite2D" parent="Objects_Front/Body"]
-visible = false
-position = Vector2(4, -38.4371)
-texture = ExtResource("17_bt6i6")
-
 [node name="TopBow7" type="Sprite2D" parent="Objects_Front/Body"]
 visible = false
 position = Vector2(4, -73)
 texture = ExtResource("18_jc0e1")
-
-[node name="TopBow8" type="Sprite2D" parent="Objects_Front/Body"]
-visible = false
-position = Vector2(4, -38.4371)
-texture = ExtResource("19_sishn")
 
 [node name="TopBow9" type="Sprite2D" parent="Objects_Front/Body"]
 visible = false

@@ -20,20 +20,18 @@ var front_side : bool = false
 func _ready() -> void:
 	$Body_Back.hide()
 	$Body_Xray.hide()
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if dragging:
 		position = lerp(position, get_global_mouse_position() - of_set, delta *18)
 	else:
 		if is_target and in_jail:
 			self.get_parent().Entered_Jail()
-		if position.is_equal_approx(my_position):
+		if position.is_equal_approx(my_position): # stop when on position
 			position = my_position
 		else:
 			position = lerp(position, my_position, delta *20)
-		
 
 func set_grid_position( grid_position : Vector2) -> void:
 	my_position = grid_position
@@ -84,35 +82,21 @@ func Dress_Character():
 
 	# --- edit target character ------
 	if is_target:
-		for i : int in range(Global.modified_items.size()): # [parte del cuerpo, item, si/no lo tiene]
-			if  i == 0: # Body_Front
-				
-				if Global.modified_items[i][2] == true: # se tiene que enseñar
-					
-					for j : int in range($Body_Front.get_child(Global.modified_items[i][0]).get_child_count()):
-						$Body_Front.get_child(Global.modified_items[i][0]).get_child(j).hide()
-						
-					$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).show()
-				
-				else:
-					$Body_Front.get_child(Global.modified_items[i][0]).get_child(Global.modified_items[i][1]).hide()
+		for i : int in range(Global.selected_items.size()): # [parte del cuerpo, item, si/no lo tiene]
 			
-			elif i == 1: # Body_Back
-				if Global.modified_items[i][2] == true:
-					for j : int in range($Body_Back.get_child(1).get_child_count()):
-						$Body_Back.get_child(1).get_child(j).hide()
-					
-					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).show()
-				else:
-					$Body_Back.get_child(1).get_child(Global.modified_items[i][1]).hide()
+			# extract variables
+			var body_section : int = Global.selected_items[i][0]
+			var body_part : int = Global.selected_items[i][1]
+			var wich_item : int = Global.selected_items[i][2]
+			var it_has : bool = Global.selected_items[i][3]
 			
-			elif i == 2: # Body_Xray
-				if Global.modified_items[i][2] == true:
-					for j : int in range($Body_Xray.get_child(1).get_child_count()):
-						$Body_Xray.get_child(1).get_child(j).hide()
-					$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).show()
-				else:
-					$Body_Xray.get_child(1).get_child(Global.modified_items[i][1]).hide()
+			if it_has == true:
+				for j : int in range($".".get_child(body_section).get_child(body_part).get_child_count()):
+					$".".get_child(body_section).get_child(body_part).get_child(j).hide()
+				$".".get_child(body_section).get_child(body_part).get_child(wich_item).show()
+			
+			else:
+				$".".get_child(body_section).get_child(body_part).get_child(wich_item).hide()
 
 func _on_is_dragged_button_down() -> void:
 	dragging = true
@@ -132,7 +116,7 @@ func _on_is_dragged_button_up() -> void:
 	$CPUParticles2D.emitting = false
 
 func _on_is_dragged_pressed() -> void:
-	if my_position.is_equal_approx(position):
+	if my_position.distance_to(position) < 15:
 		front_side = !front_side
 		$Body_Front.visible = !$Body_Front.visible
 		$Body_Back.visible = !$Body_Back.visible

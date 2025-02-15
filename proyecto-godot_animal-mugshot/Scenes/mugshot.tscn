@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cx52usm28awl2"]
+[gd_scene load_steps=41 format=3 uid="uid://cx52usm28awl2"]
 
 [ext_resource type="Script" path="res://Scripts/mugshot.gd" id="1_x6js4"]
 [ext_resource type="Texture2D" uid="uid://b0i2jc5f6dkf7" path="res://Assets/animals/front/setonio_front.png" id="2_fodys"]
@@ -15,13 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bbjpqlq0necrf" path="res://Assets/animals/front/topo_front.png" id="9_33a77"]
 [ext_resource type="Texture2D" uid="uid://duf8mudkjiwf7" path="res://Assets/animals/back/coneja_madre_back.png" id="9_d7sme"]
 [ext_resource type="Texture2D" uid="uid://bkb6tyy1e88re" path="res://Assets/animals/front/applepie_front.png" id="10_5snif"]
-[ext_resource type="Texture2D" uid="uid://cjpjry25lma7v" path="res://Assets/accesories/head/head_cap_1.png" id="12_h6sdp"]
 [ext_resource type="Texture2D" uid="uid://qoydqt64785q" path="res://Assets/accesories/head/head_cap_2.png" id="13_mvm7o"]
 [ext_resource type="Texture2D" uid="uid://24sud7sa0rmq" path="res://Assets/accesories/head/head_cap_3.png" id="14_s312l"]
 [ext_resource type="Texture2D" uid="uid://c3eq562q01viu" path="res://Assets/accesories/head/head_flowers_1.png" id="15_v1eo6"]
 [ext_resource type="Texture2D" uid="uid://dpcguvn3lwjn8" path="res://Assets/animals/back/baby_rabbit_back.png" id="17_1txh3"]
 [ext_resource type="Texture2D" uid="uid://diclmrwlc7xkw" path="res://Assets/accesories/head/head_flowers_3.png" id="17_hgy1c"]
-[ext_resource type="Texture2D" uid="uid://cqhytywjbefi3" path="res://Assets/accesories/head/head_hat_1.png" id="18_74ttd"]
 [ext_resource type="Texture2D" uid="uid://b8bmsdeefkyh" path="res://Assets/animals/back/chocu_back.png" id="18_do03e"]
 [ext_resource type="Texture2D" uid="uid://devvkr7x4gsk4" path="res://Assets/animals/back/hamster_back.png" id="19_bmjw4"]
 [ext_resource type="Texture2D" uid="uid://cu4n0neung30c" path="res://Assets/accesories/head/head_hat_2.png" id="19_n477t"]
@@ -34,9 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://ugkblx3slteg" path="res://Assets/accesories/top/top_lace_1.png" id="24_33rjb"]
 [ext_resource type="Texture2D" uid="uid://bseifabmtqgv" path="res://Assets/animals/back/applepie_back.png" id="24_j23hr"]
 [ext_resource type="Texture2D" uid="uid://faqorcq3exvu" path="res://Assets/accesories/top/top_lace_2.png" id="25_cbx45"]
-[ext_resource type="Texture2D" uid="uid://skbpsv7keh4" path="res://Assets/accesories/top/top_lace_3.png" id="26_03r6d"]
 [ext_resource type="Texture2D" uid="uid://db78xvxholqdi" path="res://Assets/accesories/top/top_tie_1.png" id="27_c5jms"]
-[ext_resource type="Texture2D" uid="uid://cs3tw82orab21" path="res://Assets/accesories/top/top_tie_2.png" id="28_bkwyl"]
 [ext_resource type="Texture2D" uid="uid://bv8pvbwlwcvlk" path="res://Assets/accesories/top/top_tie_3.png" id="29_aexqn"]
 [ext_resource type="Texture2D" uid="uid://cxevrk7bg33h2" path="res://Assets/accesories/back/back_cigar_1.png" id="40_3aufo"]
 [ext_resource type="Texture2D" uid="uid://mq4id2viwuk6" path="res://Assets/accesories/back/back_cup_1.png" id="43_uollv"]
@@ -103,22 +99,16 @@ z_index = 2
 position = Vector2(0, 71)
 scale = Vector2(0.785672, 0.785672)
 
-[node name="Head_0" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
-visible = false
-position = Vector2(1, -70)
-scale = Vector2(0.671053, 0.611111)
-texture = ExtResource("12_h6sdp")
-
 [node name="Head_1" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
 visible = false
 position = Vector2(1, -59)
-scale = Vector2(0.644737, 0.688889)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("13_mvm7o")
 
 [node name="Head_2" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
 visible = false
 position = Vector2(0, -58)
-scale = Vector2(0.736842, 0.688889)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("14_s312l")
 
 [node name="Head_3" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
@@ -132,12 +122,6 @@ visible = false
 position = Vector2(0.377088, -58.715)
 scale = Vector2(0.65281, 0.581888)
 texture = ExtResource("17_hgy1c")
-
-[node name="Head_6" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
-visible = false
-position = Vector2(-1, -54)
-scale = Vector2(0.710526, 0.633333)
-texture = ExtResource("18_74ttd")
 
 [node name="Head_7" type="Sprite2D" parent="Body_Front/Head_Front_Prop"]
 visible = false
@@ -176,20 +160,10 @@ visible = false
 position = Vector2(12, 47)
 texture = ExtResource("25_cbx45")
 
-[node name="TopBow6" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
-visible = false
-position = Vector2(12, 47)
-texture = ExtResource("26_03r6d")
-
 [node name="TopBow7" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
 visible = false
 position = Vector2(12, 12.4371)
 texture = ExtResource("27_c5jms")
-
-[node name="TopBow8" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
-visible = false
-position = Vector2(12, 47)
-texture = ExtResource("28_bkwyl")
 
 [node name="TopBow9" type="Sprite2D" parent="Body_Front/Body_Front_Prop"]
 visible = false
@@ -349,7 +323,7 @@ emitting = false
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("45_on2dt")
-volume_db = -8.0
+volume_db = -6.0
 pitch_scale = 1.8
 
 [connection signal="button_down" from="Is_Dragged" to="." method="_on_is_dragged_button_down"]
