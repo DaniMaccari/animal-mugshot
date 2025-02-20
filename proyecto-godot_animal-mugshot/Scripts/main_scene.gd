@@ -39,6 +39,7 @@ func New_Round() -> void:
 		# cerrar cortinas
 		$Cortinas.Close_Curtains()
 		$Sound_Clap.play()
+		$UI.Add_Time(50)
 		await get_tree().create_timer(1.0).timeout
 		
 		# actualizar todo

@@ -11,6 +11,11 @@ func Set_Timer() -> void:
 	$Timer.start()
 	$CPUParticles2D.emitting = true
 
+func Add_Time(time_bonus : int) -> void:
+	timer_value += time_bonus
+	if timer_value >= max_timer_value:
+		timer_value = max_timer_value
+	
 func _on_timer_timeout() -> void:
 	timer_value -= 1
 	$TextureProgressBar.value = timer_value
