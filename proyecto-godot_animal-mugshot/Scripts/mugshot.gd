@@ -124,8 +124,8 @@ func _on_is_dragged_pressed() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Jail"):
 		in_jail = true
-		if is_target:
-			my_position = get_parent().get_parent().get_node("Jail").position
+		#if is_target:
+			#my_position = get_parent().get_parent().get_node("Jail").position
 		print("Estoy en la carcer, soy ", is_target)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:

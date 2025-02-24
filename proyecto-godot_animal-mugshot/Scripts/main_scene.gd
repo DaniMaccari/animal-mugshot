@@ -12,7 +12,7 @@ const MUGSHOT_SCENE: PackedScene = preload("res://Scenes/mugshot.tscn")
 
 func _ready() -> void:
 	$Cortinas.show()
-	$Game_Menu.show()
+	$Game_Menu.Show_Menu()
 	
 	$Mugshots_Canvas.entered_jail.connect(New_Round)
 	$UI.time_ended.connect(Game_Over)
@@ -21,8 +21,7 @@ func _ready() -> void:
 func New_Game() -> void:
 	
 	Global.is_playing = true
-	$Game_Menu.hide()
-	$Game_Menu/StartGameButton.disabled = true
+	$Game_Menu.Hide_Menu()
 	$Cortinas.show()
 	Update_Props()
 	Update_Folders()
@@ -54,9 +53,7 @@ func Game_Over() -> void:
 	if Global.is_playing:
 		Global.is_playing = false
 		print("Game Over")
-		$Game_Menu.show()
-		$Game_Menu/Fin.show()
-		$Game_Menu/StartGameButton.disabled = false
+		$Game_Menu.Show_Menu()
 		$Cortinas.Game_Over()
 		#$Music_BG.stop()
 		$Music_BG.pitch_scale = 0.8

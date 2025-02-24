@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bqa8smnlts1wp"]
+[gd_scene load_steps=31 format=3 uid="uid://bqa8smnlts1wp"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_t7gi6"]
 [ext_resource type="PackedScene" uid="uid://jlb0trok83do" path="res://Scenes/sheet_objects/sheet_1.tscn" id="2_pj16t"]
@@ -19,10 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://bwmvd3skpy81t" path="res://Scenes/sheet_objects/sheet_5.tscn" id="13_jm55t"]
 [ext_resource type="Script" path="res://Scripts/cortinas.gd" id="15_n0m8r"]
 [ext_resource type="Texture2D" uid="uid://bf1yprr0xcyxf" path="res://Assets/UI/cortina.png" id="16_3tebr"]
-[ext_resource type="Texture2D" uid="uid://b500wxhg1v27k" path="res://Assets/UI/gameOver (1).png" id="18_nya1x"]
-[ext_resource type="Texture2D" uid="uid://bbrqka3nkmeh5" path="res://Assets/test_assets/bien.png" id="19_86hsq"]
+[ext_resource type="Script" path="res://Scripts/game_menu.gd" id="18_6tbj6"]
+[ext_resource type="PackedScene" uid="uid://cuhh1246vnmup" path="res://Scenes/sheet_objects/sheet_tutorial.tscn" id="19_5vf4d"]
+[ext_resource type="Texture2D" uid="uid://b33chy4a41mp2" path="res://Assets/UI/animalMugshotTitle.png" id="19_cvcto"]
+[ext_resource type="Texture2D" uid="uid://0wudujmrjwns" path="res://Assets/UI/papelSinPostIt.png" id="20_0waur"]
+[ext_resource type="Texture2D" uid="uid://bjmjgg0y0n34m" path="res://Assets/UI/papelSinPostIt_shadow.png" id="20_rrn14"]
 [ext_resource type="AudioStream" uid="uid://745262xcjldq" path="res://Assets/music/BG music.mp3" id="21_na3mh"]
+[ext_resource type="Texture2D" uid="uid://dj7xliq3g4rvk" path="res://Assets/UI/GameOverBien.png" id="21_pu7sp"]
 [ext_resource type="AudioStream" uid="uid://dfllq14xeweqg" path="res://Assets/music/clap.mp3" id="22_g7jub"]
+[ext_resource type="Texture2D" uid="uid://l5cqdblpdlad" path="res://Assets/UI/playAgain.png" id="22_hxdrr"]
 [ext_resource type="AudioStream" uid="uid://c5apitvfinq5b" path="res://Assets/music/circo final.wav" id="22_n1eyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4yja"]
@@ -30,6 +35,7 @@ size = Vector2(898.361, 691.804)
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_t7gi6")
+metadata/_edit_vertical_guides_ = [400.0]
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -10
@@ -171,39 +177,65 @@ wait_time = 0.3
 position = Vector2(951, 7)
 
 [node name="Game_Menu" type="Node2D" parent="."]
-visible = false
 z_index = 15
+script = ExtResource("18_6tbj6")
 
-[node name="Inicio" type="Sprite2D" parent="Game_Menu"]
+[node name="Tuto_Folder" parent="Game_Menu" instance=ExtResource("19_5vf4d")]
+position = Vector2(-154, 612)
+
+[node name="Start" type="Sprite2D" parent="Game_Menu"]
 z_index = 1
-position = Vector2(450, 376)
-scale = Vector2(0.711458, 0.711458)
-texture = ExtResource("18_nya1x")
+position = Vector2(435.753, 251)
+rotation = -0.0349066
+scale = Vector2(0.81483, 0.81483)
+texture = ExtResource("19_cvcto")
 
-[node name="Fin" type="Sprite2D" parent="Game_Menu"]
+[node name="PapelSinPostIt" type="Sprite2D" parent="Game_Menu/Start"]
+z_index = 1
+position = Vector2(6, 412)
+rotation = 0.0610865
+scale = Vector2(0.686288, 0.686288)
+texture = ExtResource("20_0waur")
+
+[node name="Start_Shadow" type="Sprite2D" parent="Game_Menu/Start"]
+visible = false
+position = Vector2(13, 422)
+rotation = 0.0610865
+scale = Vector2(0.686288, 0.686288)
+texture = ExtResource("20_rrn14")
+
+[node name="End" type="Sprite2D" parent="Game_Menu"]
 visible = false
 z_index = 1
-position = Vector2(450, 376)
-scale = Vector2(0.711458, 0.711458)
-texture = ExtResource("18_nya1x")
+position = Vector2(412, 251)
+rotation = -0.0349066
+scale = Vector2(0.815, 0.815)
+texture = ExtResource("21_pu7sp")
 
-[node name="Good" type="Sprite2D" parent="Game_Menu"]
-visible = false
+[node name="PapelSinPostIt" type="Sprite2D" parent="Game_Menu/End"]
 z_index = 1
-position = Vector2(420, 400)
-texture = ExtResource("19_86hsq")
+position = Vector2(4, 412)
+rotation = 0.0610865
+scale = Vector2(0.686, 0.686)
+texture = ExtResource("22_hxdrr")
+
+[node name="Start_Shadow" type="Sprite2D" parent="Game_Menu/End"]
+visible = false
+position = Vector2(13, 422)
+rotation = 0.0610865
+scale = Vector2(0.686288, 0.686288)
+texture = ExtResource("20_rrn14")
 
 [node name="StartGameButton" type="Button" parent="Game_Menu"]
-self_modulate = Color(1, 1, 1, 0)
-z_index = 2
-offset_left = 312.0
-offset_top = 424.0
-offset_right = 506.0
-offset_bottom = 619.0
+self_modulate = Color(1, 0, 1, 1)
+offset_left = 311.753
+offset_top = 466.0
+offset_right = 553.753
+offset_bottom = 693.0
+action_mode = 0
 
 [node name="Cortinas" type="Node2D" parent="."]
 process_mode = 3
-visible = false
 z_index = 15
 script = ExtResource("15_n0m8r")
 
@@ -233,8 +265,6 @@ parameters/looping = true
 
 [node name="Sound_Clap" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_g7jub")
-volume_db = -12.0
-pitch_scale = 1.15
 
 [node name="Music_Final" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_n1eyq")
@@ -243,4 +273,6 @@ volume_db = -15.0
 [connection signal="area_entered" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Jail/Area2D" to="Jail" method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="UI/Timer" to="UI" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Game_Menu/StartGameButton" to="Game_Menu" method="_on_start_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="Game_Menu/StartGameButton" to="Game_Menu" method="_on_start_game_button_mouse_exited"]
 [connection signal="pressed" from="Game_Menu/StartGameButton" to="." method="_on_start_game_button_pressed"]

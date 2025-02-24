@@ -3,9 +3,6 @@ extends Sprite2D
 var dragging : bool = false
 var of_set = Vector2( 0, 0)
 
-func _ready() -> void:
-	pass
-
 func _process(delta: float) -> void:
 	if dragging:
 		position = lerp(position, get_global_mouse_position() - of_set, delta *10)
