@@ -227,7 +227,8 @@ scale = Vector2(0.686288, 0.686288)
 texture = ExtResource("20_rrn14")
 
 [node name="StartGameButton" type="Button" parent="Game_Menu"]
-self_modulate = Color(1, 0, 1, 1)
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
 offset_left = 311.753
 offset_top = 466.0
 offset_right = 553.753

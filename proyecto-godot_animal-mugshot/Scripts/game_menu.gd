@@ -12,9 +12,11 @@ func Show_Menu() -> void:
 		$End.show()
 	
 	$StartGameButton.disabled = false
+	$StartGameButton.show()
 	
 func Hide_Menu() -> void:
 	$StartGameButton.disabled = true
+	$StartGameButton.hide()
 	
 	var tween: Tween = create_tween()
 	tween.set_parallel(true)
